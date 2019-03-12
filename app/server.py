@@ -9,7 +9,8 @@ from fastai import *
 from fastai.vision import *
 
 #export_file_url = 'https://www.dropbox.com/s/v6cuuvddq73d1e0/export.pkl?raw=1'
-export_file_url = 'https://drive.google.com/open?id=1tpHsmC8kn_EJlozFe_L1BPpijPgRMn84'
+#export_file_url = 'https://drive.google.com/open?id=1tpHsmC8kn_EJlozFe_L1BPpijPgRMn84'
+export_file_url = 'https://www.dropbox.com/s/cb066ejl8extz5s/export.pkl?raw=1'
 export_file_name = 'export.pkl'
 
 classes = ['capsule', 'tablet', 'red', 'green', 'blue']
