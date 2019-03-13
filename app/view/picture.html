@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="jumbotron">
+    <h1>Upload a Picture</h1>
+
+    <div class="form-group">
+
+          <p class='help-block'>Image types only:</p>
+          </br>
+          <form action="/predict" method="post" enctype="multipart/form-data">
+            <label for='file'>Select Files:</label>
+            <input type="file" name="file" value="Upload" id='file'>
+
+            <label class="btn btn-outline-primary">
+                Predict <input type="submit" value="Predict" style="display:
+                none;">
+            </label>
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+
+            <div class='image_section' style='display:none;'>
+              <div class='image_preview'>
+                <div id='ImagePreview'>
+                  </div>
+            {% if label %} {{ label }} {% endif %}
+          </form>
+    </div>
+  </div>
+{% endblock %}
