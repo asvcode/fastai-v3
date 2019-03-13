@@ -52,7 +52,7 @@ loop.close()
 
 @app.route('/')
 def index(request):
-    html = path/'view'/'base.html'
+    html = path/'view'/'index.html'
     return HTMLResponse(html.open().read())
 
 @app.route('/picture')
@@ -61,7 +61,7 @@ def picture(request):
     return HTMLResponse(html.open().read())
 
 @app.route('/info')
-def picture(request):
+def info(request):
     html = path/'view'/'info.html'
     return HTMLResponse(html.open().read())
 
