@@ -66,7 +66,7 @@ def info(request):
     html = path/'view'/'info.html'
     return HTMLResponse(html.open().read())
 
-@app.route('/analyze', methods=['POST'], name)
+@app.route('/analyze', methods=['POST'])
 async def analyze(request):
     name = export_file_name
     data = await request.form()
