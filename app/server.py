@@ -55,6 +55,16 @@ def index(request):
     html = path/'view'/'base.html'
     return HTMLResponse(html.open().read())
 
+@app.route('/picture')
+def picture(request):
+    html = path/'view'/'index.html'
+    return HTMLResponse(html.open().read())
+
+@app.route('/info')
+def picture(request):
+    html = path/'view'/'info.html'
+    return HTMLResponse(html.open().read())
+
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     data = await request.form()
