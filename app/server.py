@@ -10,15 +10,20 @@ from fastai.vision import *
 
 #export_file_url = 'https://www.dropbox.com/s/v6cuuvddq73d1e0/export.pkl?raw=1'
 #export_file_url = 'https://drive.google.com/open?id=1tpHsmC8kn_EJlozFe_L1BPpijPgRMn84'
-export_file_url = 'https://www.dropbox.com/s/icdr7vmb89sadcb/render.pkl?dl=1'
-export_file_name = 'render.pkl'
+export_file_url = 'https://www.dropbox.com/s/jdm3feb2xt2cimj/squeezenet_v1.pkl?dl=1'
+export_file_name = 'squeezenet_v1.pkl'
 
-classes = ['capsule', 'tablet', 'red', 'green', 'blue']
+classes = ['beige', 'black', 'blue', 'brown', 'capsule', 'gold', 'green', 'grey', 'orange', 'pink', 'purple', 'red', 'tablet', 'tan', 'white', 'yellow']
 path = Path(__file__).parent
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
 app.mount('/static', StaticFiles(directory='app/static'))
+
+def accuracy_thresh(y_pred:Tensor, y_true:Tensor, thresh:float=0.5, sigmoid:bool=True)->Rank0Tensor:
+    "Compute accuracy when `y_pred` and `y_true` are the same size."
+    if sigmoid: y_pred = y_pred.sigmoid()
+    return ((y_pred>thresh)==y_true.byte()).float().mean()
 
 async def download_file(url, dest):
     if dest.exists(): return
