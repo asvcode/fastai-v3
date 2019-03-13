@@ -57,7 +57,7 @@ def index(request):
 
 @app.route('/picture')
 def picture(request):
-    html = path/'view'/'index.html'
+    html = path/'view'/'picture.html'
     return HTMLResponse(html.open().read())
 
 @app.route('/info')
