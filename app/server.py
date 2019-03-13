@@ -11,7 +11,8 @@ from fastai.vision import *
 #export_file_url = 'https://www.dropbox.com/s/v6cuuvddq73d1e0/export.pkl?raw=1'
 #export_file_url = 'https://drive.google.com/open?id=1tpHsmC8kn_EJlozFe_L1BPpijPgRMn84'
 export_file_url = 'https://www.dropbox.com/s/jdm3feb2xt2cimj/squeezenet_v1.pkl?dl=1'
-export_file_name = 'squeezenet_v1.pkl'
+export_file_url = 'https://www.dropbox.com/s/19xv4nd7f68z63o/resnet50_v1.pkl?dl=1'
+export_file_name = 'resnet50_v1.pkl'
 
 classes = ['beige', 'black', 'blue', 'brown', 'capsule', 'gold', 'green', 'grey', 'orange', 'pink', 'purple', 'red', 'tablet', 'tan', 'white', 'yellow']
 path = Path(__file__).parent
@@ -67,6 +68,7 @@ def info(request):
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
+    name = export_file_name
     data = await request.form()
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
