@@ -10,11 +10,15 @@ from fastai.vision import *
 
 #export_file_url = 'https://www.dropbox.com/s/v6cuuvddq73d1e0/export.pkl?raw=1'
 #export_file_url = 'https://drive.google.com/open?id=1tpHsmC8kn_EJlozFe_L1BPpijPgRMn84'
-export_file_url = 'https://www.dropbox.com/s/jdm3feb2xt2cimj/squeezenet_v1.pkl?dl=1'
-export_file_url = 'https://www.dropbox.com/s/19xv4nd7f68z63o/resnet50_v1.pkl?dl=1'
-export_file_name = 'resnet50_v1.pkl'
+#Working Squeezenet
+#export_file_url = 'https://www.dropbox.com/s/jdm3feb2xt2cimj/squeezenet_v1.pkl?dl=1'
+#Working ResNet
+#export_file_url = 'https://www.dropbox.com/s/19xv4nd7f68z63o/resnet50_v1.pkl?dl=1'
+export_file_url = 'https://www.dropbox.com/s/sauftmi8tp8axyh/json.pkl?dl=1'
+export_file_name = 'json.pkl'
 
-classes = ['beige', 'black', 'blue', 'brown', 'capsule', 'gold', 'green', 'grey', 'orange', 'pink', 'purple', 'red', 'tablet', 'tan', 'white', 'yellow']
+#classes = ['beige', 'black', 'blue', 'brown', 'capsule', 'gold', 'green', 'grey', 'orange', 'pink', 'purple', 'red', 'tablet', 'tan', 'white', 'yellow']
+classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin 300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
 path = Path(__file__).parent
 
 app = Starlette()
