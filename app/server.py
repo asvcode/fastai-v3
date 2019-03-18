@@ -75,7 +75,7 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
 
-    preds_sorted, idxs = prediction.sort(descending=True)
+    preds_sorted, idxs = prediction(descending=True)
 
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
