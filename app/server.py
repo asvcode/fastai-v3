@@ -16,6 +16,8 @@ export_file_name = 'pill_4.pkl'
 with open('app/static/Test30.json', 'r') as f:
     cat_to_name = json.load(f)
 
+path = Path(__file__).parent
+
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
