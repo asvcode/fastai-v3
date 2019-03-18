@@ -21,6 +21,8 @@ export_file_name = 'json.pkl'
 with open('app/static/Test30.json', 'r') as f:
     cat_to_name = json.load(f)
 
+class_names = data.classes
+
 for i in range(0,len(class_names)):
     class_names[i] = cat_to_name.get(class_names[i])
 
