@@ -18,9 +18,11 @@ from fastai.vision import *
 export_file_url = 'https://www.dropbox.com/s/sauftmi8tp8axyh/json.pkl?dl=1'
 export_file_name = 'json.pkl'
 
-with open('app/static/Test30.json', 'r') as f: cat_to_name = json.load(f)
+with open('app/static/Test30.json', 'r') as f:
+    cat_to_name = json.load(f)
 
-label_names_two = [names[str(x)] for x in cat_to_name]
+for i in range(0,len(class_names)):
+    class_names[i] = cat_to_name.get(class_names[i])
 
 #classes = ['beige', 'black', 'blue', 'brown', 'capsule', 'gold', 'green', 'grey', 'orange', 'pink', 'purple', 'red', 'tablet', 'tan', 'white', 'yellow']
 classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin 300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
@@ -82,7 +84,7 @@ async def analyze(request):
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
-    name_two = label_names_two[prediction]
+    name_two = class_names[prediction]
     print (name_two)
     return JSONResponse({'result': str(prediction)})
 
