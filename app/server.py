@@ -12,25 +12,8 @@ from fastai.vision import *
 export_file_url = 'https://www.dropbox.com/s/93h681qig7sggpa/pill_4.pkl?dl=1'
 export_file_name = 'pill_4.pkl'
 
-#learn = load_learner(export_file_url, f'pill_4.pkl')
-
 with open('app/static/Test30.json', 'r') as f:
     cat_to_name = json.load(f)
-
-#pred_1_class, indice, preds = learn.predict(img)
-
-# Get all best predictions
-#preds_sorted, idxs = preds.sort(descending=True)
-
-# Get best 3 predictions - classes
-#pred_2_class = learn.data.classes[idxs[1]]
-#pred_3_class = learn.data.classes[idxs[2]]
-
-# Get best 3 predictions - probabilities
-#pred_1_prob = np.round(100*preds_sorted[0].item(),2)
-#pred_2_prob = np.round(100*preds_sorted[1].item(),2)
-#pred_3_prob = np.round(100*preds_sorted[2].item(),2)
-#preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_1_class} ({pred_2_prob}%)', f'{pred_1_class} ({pred_3_prob}%)']
 
 path = Path(__file__).parent
 
@@ -99,11 +82,8 @@ async def analyze(request):
     pred_3_prob = np.round(100*preds_sorted[2].item(),2)
     preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_1_class} ({pred_2_prob}%)', f'{pred_1_class} ({pred_3_prob}%)']
 
-
-
-
     output = (preds_best3[0], (preds_best3[1]), (preds_best3[2]), (prediction))
-    return JSONResponse({'result': str(prediction)})
+    return JSONResponse({'result': str(output)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
