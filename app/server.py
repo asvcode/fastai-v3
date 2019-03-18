@@ -16,7 +16,7 @@ tfms = get_transforms(do_flip=True, flip_vert=True, max_rotate=0.25, max_zoom=1.
                    max_lighting=0.5, max_warp=0.2, p_affine=0.9,
                    p_lighting=0.0, xtra_tfms=None)
 
-data = ImageDataBunch.from_folder(path, ds_tfms=tfms, bs=16, size=128)
+data = ImageDataBunch.from_folder(export_file_url, ds_tfms=tfms, bs=16, size=128)
 data.normalize(imagenet_stats);
 
 class_names = data.classes
