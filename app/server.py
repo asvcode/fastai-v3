@@ -18,7 +18,7 @@ from fastai.vision import *
 export_file_url = 'https://www.dropbox.com/s/sauftmi8tp8axyh/json.pkl?dl=1'
 export_file_name = 'json.pkl'
 
-with open('Test30.json', 'r') as f: cat_to_name = json.load(f)
+with open('app/static/Test30.json', 'r') as f: cat_to_name = json.load(f)
 
 label_names_two = [names[str(x)] for x in cat_to_name]
 
