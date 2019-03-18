@@ -12,7 +12,7 @@ from fastai.vision import *
 export_file_url = 'https://www.dropbox.com/s/yce5otqijrpfs8o/pill_3.pkl?dl=1'
 export_file_name = 'pill_3.pkl'
 
-path = 'app./static'
+path = 'app./static/files'
 
 tfms = get_transforms(do_flip=True, flip_vert=True, max_rotate=0.25, max_zoom=1.05,
                    max_lighting=0.5, max_warp=0.2, p_affine=0.9,
