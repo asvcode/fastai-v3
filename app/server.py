@@ -73,7 +73,7 @@ async def analyze(request):
     data = await request.form()
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    prediction = learn.predict(img)[0]
+    prediction, preds = learn.predict(img)[0]
 
     preds_sorted, idxs = preds.sort(descending=True)
 
