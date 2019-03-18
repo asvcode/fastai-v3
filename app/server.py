@@ -12,8 +12,7 @@ from fastai.vision import *
 export_file_url = 'https://www.dropbox.com/s/93h681qig7sggpa/pill_4.pkl?dl=1'
 export_file_name = 'pill_4.pkl'
 
-learn = load_learner('https://www.dropbox.com/s/93h681qig7sggpa/pill_4.pkl?dl=1')
-
+learn = load_learner(export_file_url, f'pill_4.pkl')
 
 with open('app/static/Test30.json', 'r') as f:
     cat_to_name = json.load(f)
