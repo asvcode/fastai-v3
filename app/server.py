@@ -9,27 +9,13 @@ import json
 from fastai import *
 from fastai.vision import *
 
-export_file_url = 'https://www.dropbox.com/s/yce5otqijrpfs8o/pill_3.pkl?dl=1'
-export_file_name = 'pill_3.pkl'
+export_file_url = 'https://www.dropbox.com/s/93h681qig7sggpa/pill_4.pkl?dl=1'
+export_file_name = 'pill_4.pkl'
 
-path = 'tmp'
 
-tfms = get_transforms(do_flip=True, flip_vert=True, max_rotate=0.25, max_zoom=1.05,
-                   max_lighting=0.5, max_warp=0.2, p_affine=0.9,
-                   p_lighting=0.0, xtra_tfms=None)
-
-data = ImageDataBunch.from_folder(path, ds_tfms=tfms, bs=16, size=128)
-data.normalize(imagenet_stats);
-
-class_names = data.classes
-
-with open('Test30.json', 'r') as f:
+with open('app/static/Test30.json', 'r') as f:
     cat_to_name = json.load(f)
 
-for i in range(0,len(class_names)):
-    class_names[i] = cat_to_name.get(class_names[i])
-
-learn = cnn_learner(data, models.resnet50, metrics=accuracy)
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
