@@ -75,14 +75,15 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
 
-    preds_sorted, idxs = prediction(descending=True)
+    #preds_sorted, idxs = prediction(descending=True)
 
-    pred_1_prob = np.round(100*preds_sorted[0].item(),2)
-    pred_2_prob = np.round(100*preds_sorted[1].item(),2)
-    pred_3_prob = np.round(100*preds_sorted[2].item(),2)
-    preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_1_class} ({pred_2_prob}%)', f'{pred_1_class} ({pred_3_prob}%)']
+    pred_1_prob = np.round(100*prediction[0].item(),2)
+    #pred_2_prob = np.round(100*preds_sorted[1].item(),2)
+    #pred_3_prob = np.round(100*preds_sorted[2].item(),2)
+    #preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_1_class} ({pred_2_prob}%)', f'{pred_1_class} ({pred_3_prob}%)']
+    preds_best3 = [f'({pred_1_prob}%)']
 
-    output = (preds_best3[0], (preds_best3[1]), (preds_best3[2]), (prediction))
+    output = ((preds_best3), (prediction))
     return JSONResponse({'result': str(output)})
 
 if __name__ == '__main__':
