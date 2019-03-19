@@ -9,26 +9,14 @@ import json
 from fastai import *
 from fastai.vision import *
 
-#export_file_url = 'https://www.dropbox.com/s/v6cuuvddq73d1e0/export.pkl?raw=1'
-#export_file_url = 'https://drive.google.com/open?id=1tpHsmC8kn_EJlozFe_L1BPpijPgRMn84'
-#Working Squeezenet
-#export_file_url = 'https://www.dropbox.com/s/jdm3feb2xt2cimj/squeezenet_v1.pkl?dl=1'
-#Working ResNet
-#export_file_url = 'https://www.dropbox.com/s/19xv4nd7f68z63o/resnet50_v1.pkl?dl=1'
-export_file_url = 'https://www.dropbox.com/s/sauftmi8tp8axyh/json.pkl?dl=1'
-export_file_name = 'json.pkl'
+export_file_url = 'https://www.dropbox.com/s/93h681qig7sggpa/pill_4.pkl?dl=1'
+export_file_name = 'pill_4.pkl'
 
 with open('app/static/Test30.json', 'r') as f:
     cat_to_name = json.load(f)
 
-#class_names = data.classes
-
-#for i in range(0,len(class_names)):
-#    class_names[i] = cat_to_name.get(class_names[i])
-
-#classes = ['beige', 'black', 'blue', 'brown', 'capsule', 'gold', 'green', 'grey', 'orange', 'pink', 'purple', 'red', 'tablet', 'tan', 'white', 'yellow']
-classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin 300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
 path = Path(__file__).parent
+
 
 app = Starlette()
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
@@ -86,6 +74,16 @@ async def analyze(request):
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
+
+    #preds_sorted, idxs = prediction(descending=True)
+
+    #pred_1_prob = np.round(100*prediction[0].item(),2)
+    #pred_2_prob = np.round(100*preds_sorted[1].item(),2)
+    #pred_3_prob = np.round(100*preds_sorted[2].item(),2)
+    #preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_1_class} ({pred_2_prob}%)', f'{pred_1_class} ({pred_3_prob}%)']
+    #preds_best3 = [f'({pred_1_prob}%)']
+
+    #output = ((preds_best3), (prediction))
     return JSONResponse({'result': str(prediction)})
 
 if __name__ == '__main__':
