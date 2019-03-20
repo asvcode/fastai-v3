@@ -9,10 +9,13 @@ import json
 from fastai import *
 from fastai.vision import *
 
-#export_file_url = 'https://www.dropbox.com/s/xhoz8abah0tx7eo/resnet_one_2_0319_AWS.pkl?dl=1
-export_file_url = 'https://www.dropbox.com/s/yce5otqijrpfs8o/pill_3.pkl?dl=1'
-#export_file_name = 'resnet_one_2_0319_AWS.pkl'
-export_file_name = 'pill_3.pkl'
+#AWS
+export_file_url = 'https://www.dropbox.com/s/xhoz8abah0tx7eo/resnet_one_2_0319_AWS.pkl?dl=1
+export_file_name = 'resnet_one_2_0319_AWS.pkl'
+
+#Working Names
+#export_file_url = 'https://www.dropbox.com/s/yce5otqijrpfs8o/pill_3.pkl?dl=1'
+#export_file_name = 'pill_3.pkl'
 
 with open('app/static/Test30.json', 'r') as f:
     cat_to_name = json.load(f)
