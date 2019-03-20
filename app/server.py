@@ -77,7 +77,7 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
 
-    class_names = data.classes
+    class_names = learn.data.classes
 
     for i in range(0,len(class_names)):
         class_names[i] = cat_to_name.get(class_names[i])
