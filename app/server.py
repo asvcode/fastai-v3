@@ -82,6 +82,7 @@ async def analyze(request):
     preds_sorted, idxs = preds.sort(descending=True)
 
     pred_2_class = learn.data.classes[idxs[1]]
+    pred_3_class = learn.data.classes[idxs[2]]
 
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
