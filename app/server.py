@@ -10,7 +10,7 @@ from fastai import *
 from fastai.vision import *
 
 #AWS
-export_file_url = 'https://www.dropbox.com/s/xhoz8abah0tx7eo/resnet_one_2_0319_AWS.pkl?dl=1
+export_file_url = 'https://www.dropbox.com/s/xhoz8abah0tx7eo/resnet_one_2_0319_AWS.pkl?dl=1'
 export_file_name = 'resnet_one_2_0319_AWS.pkl'
 
 #Working Names
