@@ -79,13 +79,13 @@ async def analyze(request):
 
     preds_sorted, idxs = preds.sort(descending=True)
 
-    #pred_2_class = learn.data.classes[idxs[1]]
+    pred_2_class = learn.data.classes[idxs[1]]
 
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
     pred_3_prob = np.round(100*preds_sorted[2].item(),2)
 
-    output = ((prediction), (pred_1_prob), (pred_2_prob), (pred_3_prob))
+    output = ((prediction), (pred_1_prob), (pred_2_prob), (pred_3_prob), (pred_2_class))
     return JSONResponse({'result': str(output)})
 
 if __name__ == '__main__':
