@@ -9,8 +9,10 @@ import json
 from fastai import *
 from fastai.vision import *
 
-export_file_url = 'https://www.dropbox.com/s/xhoz8abah0tx7eo/resnet_one_2_0319_AWS.pkl?dl=1'
-export_file_name = 'resnet_one_2_0319_AWS.pkl'
+#export_file_url = 'https://www.dropbox.com/s/xhoz8abah0tx7eo/resnet_one_2_0319_AWS.pkl?dl=1
+export_file_url = 'https://www.dropbox.com/s/yce5otqijrpfs8o/pill_3.pkl?dl=1'
+#export_file_name = 'resnet_one_2_0319_AWS.pkl'
+export_file_name = 'pill_3.pkl'
 
 with open('app/static/Test30.json', 'r') as f:
     cat_to_name = json.load(f)
@@ -85,7 +87,9 @@ async def analyze(request):
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
     pred_3_prob = np.round(100*preds_sorted[2].item(),2)
 
-    output = ((prediction), (pred_1_prob), (pred_2_prob), (pred_3_prob), (pred_2_class))
+    preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_2_class} ({pred_2_prob}%)', f'{pred_3_class} ({pred_3_prob}%)']
+
+    output = ((prediction), (preds_best3))
     return JSONResponse({'result': str(output)})
 
 if __name__ == '__main__':
