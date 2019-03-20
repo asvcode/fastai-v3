@@ -85,7 +85,7 @@ async def analyze(request):
     #preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_1_class} ({pred_2_prob}%)', f'{pred_1_class} ({pred_3_prob}%)']
     #preds_best3 = [f'({pred_1_prob}%)']
 
-    output = ((pred_1_class), (prediction))
+    output = ((pred_1_class), (indice), (preds), (prediction))
     return JSONResponse({'result': str(output)})
 
 if __name__ == '__main__':
