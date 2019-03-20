@@ -77,6 +77,10 @@ async def analyze(request):
 
     pred_1_class, indice, preds = learn.predict(img)
 
+    preds_sorted, idxs = preds.sort(descending=True)
+
+    pred_2_class = learn.data.classes[idxs[1]]
+
     #preds_sorted, idxs = prediction(descending=True)
 
     #pred_1_prob = np.round(100*prediction[0].item(),2)
@@ -85,7 +89,7 @@ async def analyze(request):
     #preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_1_class} ({pred_2_prob}%)', f'{pred_1_class} ({pred_3_prob}%)']
     #preds_best3 = [f'({pred_1_prob}%)']
 
-    output = ((pred_1_class), (indice), (preds), (prediction))
+    output = ((pred_1_class), (indice), (preds), (prediction), (preds_sorted))
     return JSONResponse({'result': str(output)})
 
 if __name__ == '__main__':
