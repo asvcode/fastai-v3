@@ -107,7 +107,7 @@ async def analyze(request):
     if pred_1_prob < 70:
         output = 'Not Confident'
     else:
-        result = f'Confident ({pred_1_prob}%)'
+        result = f'Confident: '
         output = (f'({result})\n {preds_best3[0]}\n {preds_best3[1]}\n {preds_best3[2]}')
 
     #output = ((preds_best3))
