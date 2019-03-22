@@ -111,7 +111,7 @@ async def analyze(request):
         output = (f'({result})\n {preds_best3[0]}\n {preds_best3[1]}\n {preds_best3[2]}')
 
     #output = ((preds_best3))
-    return JSONResponse({'result': str(result)'\n' (output)})
+    return JSONResponse({'result': str(result)'\n', (output)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
