@@ -104,7 +104,13 @@ async def analyze(request):
 
     preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_2_class} ({pred_2_prob}%)', f'{pred_3_class} ({pred_3_prob}%)', f'{pred_4_class} ({pred_3_prob}%)', f'{pred_5_class} ({pred_5_prob}%)']
 
-    output = ((preds_best3))
+    if pred_1_prob < 70:
+        output = 'Not Confident'
+    else:
+        result = f'Confident ({pred_1_prob}%)'
+        output = (f'({result})\n {preds_best3[0]}\n {preds_best3[1]}\n {preds_best3[2]}')
+
+    #output = ((preds_best3))
     return JSONResponse({'result': str(output)})
 
 if __name__ == '__main__':
