@@ -18,7 +18,7 @@ from fastai.vision import *
 #export_file_name= 'resnet152_0320.pkl'
 
 #densenet
-export_file_url = 'https://www.dropbox.com/s/p1z07jts08ao6i7/densenet201_0322_AWS.pkl?dl=1'
+export_file_url = 'https://www.dropbox.com/s/8y8x1v4euesh747/densenet201_0322_AWS.pkl?dl=1'
 export_file_name = 'densenet201_0322_AWS.pkl'
 
 #Resnet18
@@ -91,15 +91,16 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
 
-    class_names = learn.data.classes
+    #class_names = learn.data.classes
 
-    for i in range(0,len(class_names)):
-        class_names[i] = cat_to_name.get(class_names[i])
+    #for i in range(0,len(class_names)):
+    #    class_names[i] = cat_to_name.get(class_names[i])
 
     pred_1_class, indice, preds = learn.predict(img)
 
     preds_sorted, idxs = preds.sort(descending=True)
 
+    pred_1_class = learn.data.classes[idxs[0]]
     pred_2_class = learn.data.classes[idxs[1]]
     pred_3_class = learn.data.classes[idxs[2]]
     pred_4_class = learn.data.classes[idxs[3]]
