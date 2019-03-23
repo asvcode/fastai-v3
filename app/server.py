@@ -11,10 +11,12 @@ from fastai.vision import *
 
 #AWS
 #export_file_url = 'https://www.dropbox.com/s/xhoz8abah0tx7eo/resnet_one_2_0319_AWS.pkl?dl=1'
-export_file_url = 'https://www.dropbox.com/s/2nb6cc5y98lan1q/resnet152_0320.pkl?dl=1'
+#export_file_url = 'https://www.dropbox.com/s/2nb6cc5y98lan1q/resnet152_0320.pkl?dl=1'
 #export_file_name = 'resnet_one_2_0319_AWS.pkl'
-export_file_name= 'resnet152_0320.pkl'
-
+#export_file_name= 'resnet152_0320.pkl'
+#Resnet18
+export_file_url = 'https://www.dropbox.com/s/3u4v1yzyqm2pjek/resnet18_1_0322.pkl?dl=1'
+export_file_name= 'resnet18_1_0322'
 #Working Names
 #export_file_url = 'https://www.dropbox.com/s/yce5otqijrpfs8o/pill_3.pkl?dl=1'
 #export_file_name = 'pill_3.pkl'
