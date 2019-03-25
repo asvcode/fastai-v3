@@ -93,10 +93,10 @@ async def analyze(request):
 
     class_names = learn.data.classes
 
-    answer = cat_to_name.get(class_names[prediction])
+    #answer = cat_to_name.get(class_names[prediction])
 
-    #for i in range(0,len(class_names)):
-    #    class_names[i] = cat_to_name.get(class_names[i])
+    for i in range(0,len(class_names)):
+        class_names[i] = cat_to_name.get(class_names[i])
 
     pred_1_class, indice, preds = learn.predict(img)
 
@@ -116,14 +116,14 @@ async def analyze(request):
 
     preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_2_class} ({pred_2_prob}%)', f'{pred_3_class} ({pred_3_prob}%)', f'{pred_4_class} ({pred_3_prob}%)', f'{pred_5_class} ({pred_5_prob}%)']
 
-    if pred_1_prob < 70:
+    if pred_1_prob < 80:
         output = 'Not Confident'
     else:
         result = f'Confident: '
         output = (f'({result})\n {preds_best3[0]}\n {preds_best3[1]}\n {preds_best3[2]}')
 
     #output = ((preds_best3))
-    return JSONResponse({'result': str(answer)})
+    return JSONResponse({'result': str(pred_1_class)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
