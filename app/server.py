@@ -112,7 +112,7 @@ async def analyze(request):
         rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
 
 
-    return JSONResponse({'result': str(rs)})
+    return JSONResponse({'result': str(rs + first_choice + pred_1_prob)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
