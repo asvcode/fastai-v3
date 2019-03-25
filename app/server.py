@@ -93,7 +93,7 @@ async def analyze(request):
 
     class_names = learn.data.classes
 
-    answer = cat_to-name.get(class_names[prediction])
+    answer = cat_to_name.get(class_names[prediction])
 
     #for i in range(0,len(class_names)):
     #    class_names[i] = cat_to_name.get(class_names[i])
