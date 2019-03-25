@@ -89,49 +89,28 @@ async def analyze(request):
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
     #prediction = learn.predict(img)[0]
-    _,_,losses = learn.predict(img)
-    predictions = sorted(zip(classes, map(float, losses)), key=lambda p: p[1], reverse=True)
+    prediction, indice, losses = learn.predict(img)
+    preds_sorted, idxs = losses.sort(descending=True)
 
-    rs = '<p>Top 3 predictions:</p>\n'
-    for clas,pr in predictions[:3]:
-        rs+=f'<p> -{cat_to_name[clas]}: {(pr*100):.2f}% </p>\n'
-    if predictions[0][1] <= 0.70:
-        rs+='<p>(Note: Model is not confident with this prediction)</p>\n'
-
-    rs+=f'<p>Which part of the image the model considered for <b>{cat_to_name[predictions[0][0]]}</b> prediction: </p>\n'
 
     class_names = learn.data.classes
-
-    #answer = cat_to_name.get(class_names[prediction])
 
     for i in range(0,len(class_names)):
         class_names[i] = cat_to_name.get(class_names[i])
 
-    pred_1_class, indice, preds = learn.predict(img)
-
-    preds_sorted, idxs = preds.sort(descending=True)
-
-    pred_1_class = learn.data.classes[idxs[0]]
-    pred_2_class = learn.data.classes[idxs[1]]
-    pred_3_class = learn.data.classes[idxs[2]]
-    pred_4_class = learn.data.classes[idxs[3]]
-    pred_5_class = learn.data.classes[idxs[4]]
+    first_choice = class_names[idxs[0]]
+    second_choice = class_names[idxs[1]]
 
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
-    pred_3_prob = np.round(100*preds_sorted[2].item(),2)
-    pred_4_prob = np.round(100*preds_sorted[3].item(),2)
-    pred_5_prob = np.round(100*preds_sorted[4].item(),2)
 
-    preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_2_class} ({pred_2_prob}%)', f'{pred_3_class} ({pred_3_prob}%)', f'{pred_4_class} ({pred_3_prob}%)', f'{pred_5_class} ({pred_5_prob}%)']
-
-    if pred_1_prob < 80:
-        result = (f' NOT Confident: \n {pred_1_class} ({pred_1_prob}%)')
+    rs = '<p>PREDICTION:</p>\n'
+    if pred_1_prob <= 80:
+        rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
     else:
-        result = (f'Confident: \n {pred_1_class} ({pred_1_prob}%)')
-        #output = (f'({result})\n {preds_best3[0]}\n {preds_best3[1]}\n {preds_best3[2]}')
+        rs+='This is it ' + first_choice + ' preds'
 
-    #output = ((preds_best3))
+
     return JSONResponse({'result': str(rs)})
 
 if __name__ == '__main__':
