@@ -93,8 +93,8 @@ async def analyze(request):
 
     prediction = learn.data.classes
 
-    for i in range(0,len(class_names)):
-        class_names[i] = cat_to_name.get(class_names[i])
+    #for i in range(0,len(class_names)):
+    #    class_names[i] = cat_to_name.get(class_names[i])
 
     pred_1_class, indice, preds = learn.predict(img)
 
