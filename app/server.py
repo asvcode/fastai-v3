@@ -94,11 +94,11 @@ async def analyze(request):
 
     rs = '<p>Top 3 predictions:</p>\n'
     for clas,pr in predictions[:3]:
-        rs+=f'<p> -{mv_dict[clas]}: {(pr*100):.2f}% </p>\n'
+        rs+=f'<p> -{cat_to_name[clas]}: {(pr*100):.2f}% </p>\n'
     if predictions[0][1] <= 0.70:
         rs+='<p>(Note: Model is not confident with this prediction)</p>\n'
 
-    rs+=f'<p>Which part of the image the model considered for <b>{mv_dict[predictions[0][0]]}</b> prediction: </p>\n'
+    rs+=f'<p>Which part of the image the model considered for <b>{cat_to_name[predictions[0][0]]}</b> prediction: </p>\n'
 
     class_names = learn.data.classes
 
