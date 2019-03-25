@@ -89,6 +89,7 @@ async def analyze(request):
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
     #prediction = learn.predict(img)[0]
+    _,_,losses = learn.predict(img)
     prediction = sorted(zip(classes, map(float, losses)), key=lambda p: p[1], reverse=True)
 
     rs = '<p>Top 3 predictions:</p>\n'
