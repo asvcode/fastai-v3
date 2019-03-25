@@ -98,8 +98,8 @@ async def analyze(request):
     for i in range(0,len(class_names)):
         class_names[i] = cat_to_name.get(class_names[i])
 
-    first_choice = class_names[idxs[0]]
-    second_choice = class_names[idxs[1]]
+    pred_1_class = class_names[idxs[0]]
+    pred_2_class = class_names[idxs[1]]
 
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
