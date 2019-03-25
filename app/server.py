@@ -11,7 +11,7 @@ from fastai.vision import *
 
 #PTH upload
 export_file_url = 'https://www.dropbox.com/s/ubtyr33aa2tkvzk/DenseNet201_1_0322.pth?dl=1'
-export_file_name = 'DenseNet201_1_0322.pth'
+export_file_name = 'DenseNet201_1_0322'
 
 #AWS
 #export_file_url = 'https://www.dropbox.com/s/xhoz8abah0tx7eo/resnet_one_2_0319_AWS.pkl?dl=1'
