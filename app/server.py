@@ -88,7 +88,16 @@ async def analyze(request):
     data = await request.form()
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    prediction = learn.predict(img)[0]
+    #prediction = learn.predict(img)[0]
+    prediction = sorted(zip(classes, map(float, losses)), key=lambda p: p[1], reverse=True)
+
+    rs = '<p>Top 3 predictions:</p>\n'
+    for clas,pr in predictions[:3]:
+        rs+=f'<p> -{mv_dict[clas]}: {(pr*100):.2f}% </p>\n'
+    if predictions[0][1] <= 0.70:
+        rs+='<p>(Note: Model is not confident with this prediction)</p>\n'
+
+    rs+=f'<p>Which part of the image the model considered for <b>{mv_dict[predictions[0][0]]}</b> prediction: </p>\n'
 
     class_names = learn.data.classes
 
@@ -122,7 +131,7 @@ async def analyze(request):
         #output = (f'({result})\n {preds_best3[0]}\n {preds_best3[1]}\n {preds_best3[2]}')
 
     #output = ((preds_best3))
-    return JSONResponse({'result': str(result)})
+    return JSONResponse({'result': str(rs)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
