@@ -90,7 +90,7 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     #prediction = learn.predict(img)[0]
     _,_,losses = learn.predict(img)
-    prediction = sorted(zip(classes, map(float, losses)), key=lambda p: p[1], reverse=True)
+    predictions = sorted(zip(classes, map(float, losses)), key=lambda p: p[1], reverse=True)
 
     rs = '<p>Top 3 predictions:</p>\n'
     for clas,pr in predictions[:3]:
