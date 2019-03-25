@@ -59,7 +59,7 @@ async def setup_learner():
     await download_file(export_file_url, path/'models'/f'{export_file_name}.pth')
     data_bunch = ImageDataBunch.single_from_classes(path, classes, size=128).normalize(imagenet_stats)
     learn = cnn_learner(data_bunch, models.densenet201, pretrained=False)
-    learn.load(model_file_name)
+    learn.load(export_file_name)
     return learn
 
 loop = asyncio.get_event_loop()
