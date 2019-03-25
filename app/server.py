@@ -91,7 +91,9 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
 
-    class_names = learn.data.classes(prediction)
+    class_names = learn.data.classes
+
+    answer = cat_to-name.get(class_names[prediction])
 
     #for i in range(0,len(class_names)):
     #    class_names[i] = cat_to_name.get(class_names[i])
@@ -121,7 +123,7 @@ async def analyze(request):
         output = (f'({result})\n {preds_best3[0]}\n {preds_best3[1]}\n {preds_best3[2]}')
 
     #output = ((preds_best3))
-    return JSONResponse({'result': str(class_names)})
+    return JSONResponse({'result': str(answer)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
