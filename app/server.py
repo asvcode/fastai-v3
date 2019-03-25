@@ -9,6 +9,10 @@ import json
 from fastai import *
 from fastai.vision import *
 
+#PTH upload
+export_file_url = 'https://www.dropbox.com/s/ubtyr33aa2tkvzk/DenseNet201_1_0322.pth?dl=1'
+export_file_name = 'DenseNet201_1_0322.pth'
+
 #AWS
 #export_file_url = 'https://www.dropbox.com/s/xhoz8abah0tx7eo/resnet_one_2_0319_AWS.pkl?dl=1'
 #export_file_name = 'resnet_one_2_0319_AWS.pkl'
@@ -18,8 +22,8 @@ from fastai.vision import *
 #export_file_name= 'resnet152_0320.pkl'
 
 #densenet
-export_file_url = 'https://www.dropbox.com/s/8y8x1v4euesh747/densenet201_0322_AWS.pkl?dl=1'
-export_file_name = 'densenet201_0322_AWS.pkl'
+#export_file_url = 'https://www.dropbox.com/s/8y8x1v4euesh747/densenet201_0322_AWS.pkl?dl=1'
+#export_file_name = 'densenet201_0322_AWS.pkl'
 
 #Resnet18
 #export_file_url = 'https://www.dropbox.com/s/3u4v1yzyqm2pjek/resnet18_1_0322.pkl?dl=1'
@@ -117,13 +121,13 @@ async def analyze(request):
     preds_best3 = [f'{pred_1_class} ({pred_1_prob}%)', f'{pred_2_class} ({pred_2_prob}%)', f'{pred_3_class} ({pred_3_prob}%)', f'{pred_4_class} ({pred_3_prob}%)', f'{pred_5_class} ({pred_5_prob}%)']
 
     if pred_1_prob < 80:
-        output = 'Not Confident'
+        result = (f' NOT Confident: \n {pred_1_class} ({pred_1_prob}%)')
     else:
-        result = f'Confident: '
-        output = (f'({result})\n {preds_best3[0]}\n {preds_best3[1]}\n {preds_best3[2]}')
+        result = (f'Confident: \n {pred_1_class} ({pred_1_prob}%)')
+        #output = (f'({result})\n {preds_best3[0]}\n {preds_best3[1]}\n {preds_best3[2]}')
 
     #output = ((preds_best3))
-    return JSONResponse({'result': str(output)})
+    return JSONResponse({'result': str(result)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
