@@ -108,7 +108,7 @@ async def analyze(request):
     if pred_1_prob <= 80:
         rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
     else:
-        rs+='This is it ' + first_choice + ' preds'
+        rs+='<p>(This is it  + first_choice +  preds)</p>'
 
 
     return JSONResponse({'result': str(rs)})
