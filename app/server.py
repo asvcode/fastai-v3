@@ -98,13 +98,13 @@ async def analyze(request):
     for i in range(0,len(class_names)):
         class_names[i] = cat_to_name.get(class_names[i])
 
-    pred_1_class = class_names[idxs[0]]
-    pred_2_class = class_names[idxs[1]]
+        pred_1_class = class_names[idxs[0]]
+        pred_2_class = class_names[idxs[1]]
 
-    pred_1_prob = np.round(100*preds_sorted[0].item(),2)
-    pred_2_prob = np.round(100*preds_sorted[1].item(),2)
+        pred_1_prob = np.round(100*preds_sorted[0].item(),2)
+        pred_2_prob = np.round(100*preds_sorted[1].item(),2)
 
-    rs = '<p>PREDICTION:</p>\n'
+    #rs = '<p>PREDICTION:</p>\n'
     if pred_1_prob <= 80:
         #rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
         result = (f' Model is NOT Confident: \n {pred_1_class} ({pred_1_prob}%)')
