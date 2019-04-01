@@ -135,7 +135,7 @@ async def analyze(request):
     else:
         #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
         #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-        result = (f'Model IS Confident: \n {class_names} ({pred_1_prob}%)')
+        result = (f'Model IS Confident: \n {prediction} {idxs} ({pred_1_prob}%)')
 
 
     return JSONResponse({'result': str(result)})
