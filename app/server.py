@@ -90,7 +90,7 @@ def info(request):
 async def analyze(request):
     name = export_file_name
     data = await request.form()
-    img_bytes = await (data['file'].read())
+    img_bytes = await (data.read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
     prediction, indice, losses = learn.predict(img)
