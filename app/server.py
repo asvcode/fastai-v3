@@ -52,6 +52,13 @@ def accuracy_thresh(y_pred:Tensor, y_true:Tensor, thresh:float=0.5, sigmoid:bool
     if sigmoid: y_pred = y_pred.sigmoid()
     return ((y_pred>thresh)==y_true.byte()).float().mean()
 
+#async def download_file(url, dest):
+#    if dest.exists(): return
+#    async with aiohttp.ClientSession() as session:
+#        async with session.get(url) as response:
+#            data = await response.read()
+#            with open(dest, 'wb') as f: f.write(data)
+
 async def download_file(url, dest):
     if dest.exists(): return
     async with aiohttp.ClientSession() as session:
