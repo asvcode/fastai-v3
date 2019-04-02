@@ -9,6 +9,9 @@ import json
 from fastai import *
 from fastai.vision import *
 
+from fastai.vision.models import cadene_models
+import pretrainedmodels
+
 #Densenet
 #export_file_url = 'https://www.dropbox.com/s/ubtyr33aa2tkvzk/DenseNet201_1_0322.pth?dl=1'
 #export_file_name = 'DenseNet201_1_0322'
