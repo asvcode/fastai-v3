@@ -12,6 +12,9 @@ from fastai.vision import *
 from fastai.vision.models import cadene_models
 import pretrainedmodels
 
+_squeezenet_meta = { 'cut': -1, 'split': lambda m: (m[0][0][7], m[1]) }
+model_meta[squeezenet1_0] = _squeezenet_meta
+
 #Densenet
 #export_file_url = 'https://www.dropbox.com/s/ubtyr33aa2tkvzk/DenseNet201_1_0322.pth?dl=1'
 #export_file_name = 'DenseNet201_1_0322'
