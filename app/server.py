@@ -67,12 +67,30 @@ async def analyze(request):
     with open('app/static/Test30.json', 'r') as f:
         cat_to_name = json.load(f)
 
-    class_names = learn.data.classes
+    ###New Version
 
-    for i in range(0,len(class_names)):
-        class_names[i] = cat_to_name.get(class_names[i])
+    class_name, img_bytes_two = image[0], image[1]
+    img_bytes_two = await (data['file'].read())
+    img_bytes_two = open_image(img_url)
 
-    pred_1_class = class_names[idxs[0]]
+    pred_1_class, indice, preds = learn.predict(img)
+
+    # Get all best predictions
+    preds_sorted, idxs = preds.sort(descending=True)
+
+    # Get best 3 predictions - classes
+    pred_2_class = learn.data.classes[idxs[1]]
+
+
+
+    ###Old Version
+
+    #class_names = learn.data.classes
+
+    #for i in range(0,len(class_names)):
+    #    class_names[i] = cat_to_name.get(class_names[i])
+
+    #pred_1_class = class_names[idxs[0]]
 
     result = (f' Model output: \n {prediction} {pred_1_class} {class_names} ({idxs})')
 
