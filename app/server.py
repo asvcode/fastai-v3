@@ -86,7 +86,7 @@ async def download_file(url, dest):
 async def setup_learner():
     await download_file(export_file_url, path/'models'/f'{export_file_name}.pth')
     data_bunch = ImageDataBunch.single_from_classes(path, classes, size=128).normalize(imagenet_stats)
-    learn = cnn_learner(data_bunch, models.squeezenet1_0, pretrained=False)
+    learn = cnn_learner(data_bunch, squeezenet1_0, pretrained=False)
     learn.load(export_file_name)
     return learn
 
