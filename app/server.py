@@ -13,8 +13,12 @@ from fastai.vision import *
 #export_file_url = 'https://www.dropbox.com/s/ubtyr33aa2tkvzk/DenseNet201_1_0322.pth?dl=1'
 #export_file_name = 'DenseNet201_1_0322'
 
-export_file_url = 'https://www.dropbox.com/s/gpw07b7vn47q3k9/squeezenet1_0_0327_B64.pth?dl=1'
-export_file_name = 'squeezenet1_0_0327_B64'
+#Cardene Squeezenet
+export_file_url = 'https://www.dropbox.com/s/6ubzhbra6rc1zbd/cardene_sq.pkl?dl=1'
+export_file_name = 'cardene_sq.pkl'
+
+#export_file_url = 'https://www.dropbox.com/s/gpw07b7vn47q3k9/squeezenet1_0_0327_B64.pth?dl=1'
+#export_file_name = 'squeezenet1_0_0327_B64'
 
 classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin 300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
 
