@@ -83,7 +83,7 @@ async def analyze(request):
     # Get best 3 predictions - classes
     pred_2_class = learn.data.classes[idxs[1]]
 
-    class_to_idx = {sorted(data.classes)[i]: i for i in range(len(data.classes))}
+    class_to_idx = {sorted(learn.data.classes)[i]: i for i in range(len(learn.data.classes))}
 
 
 
