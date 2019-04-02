@@ -66,7 +66,7 @@ async def analyze(request):
 
     class_names = learn.data.classes
 
-    result = (f' Model is NOT Confident: \n {prediction} {class_names} ({idsx})')
+    result = (f' Model is NOT Confident: \n {prediction} {class_names} ({idxs})')
 
 
     return JSONResponse({'result': str(result)})
