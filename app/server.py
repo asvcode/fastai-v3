@@ -69,9 +69,6 @@ async def analyze(request):
 
     ###New Version
 
-    class_name, img_bytes_two = img[0], img[1]
-    img_bytes_two = await (data['file'].read())
-    img_bytes_two = open_image(img_url)
 
     pred_1_class, indice, preds = learn.predict(img)
 
