@@ -14,10 +14,10 @@ import pretrainedmodels
 export_file_url = 'https://www.dropbox.com/s/6ubzhbra6rc1zbd/cardene_sq.pkl?dl=1'
 export_file_name = 'cardene_sq.pkl'
 
-classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin 300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
+#classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin #300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
 
-with open('app/static/Test30.json', 'r') as f:
-    cat_to_name = json.load(f)
+#with open('app/static/Test30.json', 'r') as f:
+#    cat_to_name = json.load(f)
 
 path = Path(__file__).parent
 
@@ -64,12 +64,17 @@ async def analyze(request):
     prediction, indice, losses = learn.predict(img)
     preds_sorted, idxs = losses.sort(descending=True)
 
+    with open('app/static/Test30.json', 'r') as f:
+        cat_to_name = json.load(f)
+
     class_names = learn.data.classes
 
     for i in range(0,len(class_names)):
         class_names[i] = cat_to_name.get(class_names[i])
 
-    result = (f' Model is NOT Confident: \n {prediction} {class_names} ({idxs})')
+    pred_1_class = class_names[idxs[0]]
+
+    result = (f' Model output: \n {prediction} {pred_1_class} {class_names} ({idxs})')
 
 
     return JSONResponse({'result': str(result)})
