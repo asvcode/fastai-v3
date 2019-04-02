@@ -69,7 +69,7 @@ async def analyze(request):
 
     ###New Version
 
-    class_name, img_bytes_two = image[0], image[1]
+    class_name, img_bytes_two = img[0], img[1]
     img_bytes_two = await (data['file'].read())
     img_bytes_two = open_image(img_url)
 
