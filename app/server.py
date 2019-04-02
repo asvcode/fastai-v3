@@ -67,6 +67,11 @@ async def analyze(request):
     with open('app/static/Test30.json', 'r') as f:
         cat_to_name = json.load(f)
 
+    class_names = learn.data.classes
+
+    for i in range(0,len(class_names)):
+        class_names[i] = cat_to_name.get(class_names[i])
+
     ###New Version
 
 
@@ -77,6 +82,8 @@ async def analyze(request):
 
     # Get best 3 predictions - classes
     pred_2_class = learn.data.classes[idxs[1]]
+
+    class_to_idx = {sorted(data.classes)[i]: i for i in range(len(data.classes))}
 
 
 
@@ -89,7 +96,7 @@ async def analyze(request):
 
     #pred_1_class = class_names[idxs[0]]
 
-    result = (f' Model output: \n {prediction} {pred_1_class} {pred_2_class}')
+    result = (f' Model output: \n {prediction} {pred_1_class} {pred_2_class} {class_to_idx}')
 
 
     return JSONResponse({'result': str(result)})
