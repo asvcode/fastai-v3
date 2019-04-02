@@ -69,8 +69,8 @@ async def analyze(request):
 
     class_names = learn.data.classes
 
-    for i in range(0,len(class_names)):
-        class_names[i] = cat_to_name.get(class_names[i])
+    for i in range(0,len(learn.data.classes)):
+        learn.data.classes[i] = cat_to_name.get(learn.data.classes[i])
 
     ###New Version
 
@@ -83,7 +83,7 @@ async def analyze(request):
     # Get best 3 predictions - classes
     pred_2_class = learn.data.classes[idxs[1]]
 
-    class_to_idx = {sorted(learn.data.classes)[i]: i for i in range(len(learn.data.classes))}
+    #class_to_idx = {sorted(learn.data.classes)[i]: i for i in range(len(learn.data.classes))}
 
 
 
@@ -96,7 +96,7 @@ async def analyze(request):
 
     #pred_1_class = class_names[idxs[0]]
 
-    result = (f' Model output: \n {prediction} {pred_1_class} {pred_2_class} {class_to_idx}')
+    result = (f' Model output: \n {prediction} {pred_1_class} {pred_2_class}')
 
 
     return JSONResponse({'result': str(result)})
