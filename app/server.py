@@ -74,7 +74,7 @@ async def analyze(request):
     pred_1_class = learn.data.classes[idxs[0]]
     pred_2_class = learn.data.classes[idxs[1]]
 
-    result = {prediction}, {pred_1_class}, {pred_2_class}, {class_to_idx}
+    result = {prediction}, {pred_1_class}, {pred_2_class}, {idx_to_class}
 
 
 
