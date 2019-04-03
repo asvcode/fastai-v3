@@ -64,43 +64,23 @@ async def analyze(request):
     prediction, indice, losses = learn.predict(img)
     preds_sorted, idxs = losses.sort(descending=True)
 
-    with open('app/static/Test30.json', 'r') as f:
-        cat_to_name = json.load(f)
+    with open('app/static/Test30.json', 'r') as f: cat_to_name = json.load(f)
+    names=OrderedDict(sorted(cat_to_name.items(), key=lambda t: t[0]))
 
-    class_names = learn.data.classes
+    class_to_idx = {sorted(names)[i]: i for i in range(len(names))}
 
-    for i in range(0,len(learn.data.classes)):
-        learn.data.classes[i] = cat_to_name.get(learn.data.classes[i])
+    idx_to_class = {val: key for key, val in class_to_idx.items()}
 
-    ###New Version
-
-
-    pred_1_class, indice, preds = learn.predict(img)
-
-    # Get all best predictions
-    preds_sorted, idxs = preds.sort(descending=True)
-
-    # Get best 3 predictions - classes
+    pred_1_class = learn.data.classes[idxs[0]]
     pred_2_class = learn.data.classes[idxs[1]]
-    pred_3_class = learn.data.classes[idxs[2]]
-    pred_4_class = learn.data.classes[idxs[3]]
 
-    #class_to_idx = {sorted(learn.data.classes)[i]: i for i in range(len(learn.data.classes))}
-    pred_1_prob = np.round(100*preds_sorted[0].item(),2)
-    pred_2_prob = np.round(100*preds_sorted[1].item(),2)
-    pred_3_prob = np.round(100*preds_sorted[2].item(),2)
+    result = {prediction}, {pred_1_class}, {pred_2_class}
 
 
-    ###Old Version
 
-    #class_names = learn.data.classes
 
-    #for i in range(0,len(class_names)):
-    #    class_names[i] = cat_to_name.get(class_names[i])
 
-    #pred_1_class = class_names[idxs[0]]
-
-    result = (f' Model output: \n {prediction} {pred_1_class}\n {pred_1_prob} {pred_2_class} {pred_2_prob}')
+    #result = (f' Model output: \n {prediction} {pred_1_class}\n {pred_1_prob} {pred_2_class} {pred_2_prob}')
 
 
     return JSONResponse({'result': str(result)})
