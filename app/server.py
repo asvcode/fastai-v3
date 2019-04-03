@@ -67,14 +67,14 @@ async def analyze(request):
     with open('app/static/Test30.json', 'r') as f: cat_to_name = json.load(f)
     names=OrderedDict(sorted(cat_to_name.items(), key=lambda t: t[0]))
 
-    class_to_idx = {sorted(names)[i]: i for i in range(len(names))}
+    class_to_idx = {sorted(cat_to_name)[i]: i for i in range(len(cat_to_name))}
 
     idx_to_class = {val: key for key, val in class_to_idx.items()}
 
     pred_1_class = learn.data.classes[idxs[0]]
     pred_2_class = learn.data.classes[idxs[1]]
 
-    result = {prediction}, {pred_1_class}, {pred_2_class}, {idx_to_class}
+    result = {prediction}, {pred_1_class}, {pred_2_class}
 
 
 
