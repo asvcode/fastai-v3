@@ -100,7 +100,7 @@ async def analyze(request):
 
     #pred_1_class = class_names[idxs[0]]
 
-    result = (f' Model output: \n {prediction} {pred_1_class} {pred_1_prob} {pred_2_class} {pred_2_prob}')
+    result = (f' Model output: \n {prediction} {pred_1_class}\n {pred_1_prob} {pred_2_class} {pred_2_prob}')
 
 
     return JSONResponse({'result': str(result)})
