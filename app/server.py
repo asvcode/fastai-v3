@@ -64,17 +64,19 @@ async def analyze(request):
     prediction, indice, losses = learn.predict(img)
     preds_sorted, idxs = losses.sort(descending=True)
 
-    with open('app/static/Test30.json', 'r') as f: cat_to_name = json.load(f)
-    names=OrderedDict(sorted(cat_to_name.items(), key=lambda t: t[0]))
+    with open('app/static/Test30.json', 'r') as f:
+        cat_to_name = json.load(f)
 
     class_to_idx = {sorted(cat_to_name)[i]: i for i in range(len(cat_to_name))}
 
-    idx_to_class = {val: key for key, val in class_to_idx.items()}
+    #idx_to_class = {val: key for key, val in class_to_idx.items()}
 
     pred_1_class = learn.data.classes[idxs[0]]
     pred_2_class = learn.data.classes[idxs[1]]
 
-    result = {prediction}, {pred_1_class}, {pred_2_class}
+    info = learn.data.classes
+
+    result = {prediction}, {info}
 
 
 
