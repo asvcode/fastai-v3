@@ -75,7 +75,7 @@ async def analyze(request):
 
     info = learn.data.classes
 
-    #result = {prediction}, {info}
+    result = (f' info: \n  str{prediction} {pred_1_class} ({pred_1_prob}%)')
 
 
 
@@ -84,7 +84,7 @@ async def analyze(request):
     #result = (f' Model output: \n {prediction} {pred_1_class}\n {pred_1_prob} {pred_2_class} {pred_2_prob}')
 
 
-    return JSONResponse({'result': str(prediction), str(pred_1_prob)})
+    return JSONResponse({'result': str(result)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
