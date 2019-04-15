@@ -75,10 +75,20 @@ async def analyze(request):
     pred_2_class = learn.data.classes[idxs[1]]
 
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
+    pred_2_prob = np.round(100*preds_sorted[1].item(),2)
 
     info = learn.data.classes
 
-    result = (f' info: \n  str{prediction} {pred_1_class} ({pred_1_prob}%)')
+    #result = (f' info: \n  str{prediction} {pred_1_class} ({pred_1_prob}%)')
+
+    if pred_1_prob <= 80:
+        #rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
+        result = (f' Model is NOT Confident: \n {prediction} {pred_1_class} ({pred_1_prob}%)')
+
+    else:
+        #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
+        #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
+        result = (f'Model IS Confident: \n {prediction} {pred_1_class} ({pred_1_prob}%)')
 
 
 
