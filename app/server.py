@@ -14,8 +14,8 @@ import pretrainedmodels
 #export_file_url = 'https://www.dropbox.com/s/6ubzhbra6rc1zbd/cardene_sq.pkl?dl=1'
 #export_file_name = 'cardene_sq.pkl'
 
-export_file_url = 'https://www.dropbox.com/s/zlg1uottg4o3mvj/squeeze_UNTRAINED_Custom_0415.pth?dl=1'
-export_file_name = 'squeeze_UNTRAINED_org_0415'
+export_file_url = 'https://www.dropbox.com/s/fjkf01oe76cspnr/squeeze_UNTRAINED_rerun_one_overfit_0415_84point5.pth?dl=1'
+export_file_name = 'squeeze_UNTRAINED_rerun_one_overfit_0415_84point5'
 
 #export_file_url = 'https://www.dropbox.com/s/1abrij8d4cinrts/squeeze_UNTRAINED_org_0415.pth?dl=1'
 #export_file_name = 'squeeze_UNTRAINED_org_0415'
@@ -41,7 +41,7 @@ async def download_file(url, dest):
 async def setup_learner():
      await download_file(export_file_url, path/'models'/f'{export_file_name}.pth')
      data_bunch = ImageDataBunch.single_from_classes(path, classes, size=296).normalize(imagenet_stats)
-     learn = cnn_learner(data_bunch, models.squeezenet1_0, pretrained=False)
+     learn = cnn_learner(data_bunch, models.squeezenet1_0, pretrained=True)
      learn.load(export_file_name)
      return learn
 
