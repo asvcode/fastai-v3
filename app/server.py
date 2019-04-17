@@ -83,11 +83,10 @@ async def analyze(request):
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
 
     pred_name = cat_to_name[str(prediction)]
-    print(pred_name)
+    pred_drug = pred_name['name']
     pred_shape = pred_name['shape']
-    print(pred_shape)
     pred_color = pred_name['color']
-    print(pred_color)
+    pred_ndc = pred_name['Drug']
 
 
     #pred_1_class = learn.data.classes[idxs[0]]
@@ -99,7 +98,7 @@ async def analyze(request):
 
     info = learn.data.classes
 
-    result = (f' info: \n  str{pred_name} {pred_shape} {pred_color}')
+    result = (f' Name: \n {pred_name} Shape: {pred_shape} \n Color: {pred_color} \n NDC: {pred_ndc}')
 
 
 
