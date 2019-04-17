@@ -89,14 +89,6 @@ async def analyze(request):
 
     #result = (f' info: \n  str{prediction} {pred_1_class} ({pred_1_prob}%)')
 
-    if pred_1_prob <= 50:
-        #rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
-        result = (f'{pred_1_class} {pred_1_prob} {pred_2_class}')
-
-    else:
-        #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
-        #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-        result = (f'{pred_1_class} {pred_1_prob} {pred_2_class}')
 
 
 
@@ -104,7 +96,7 @@ async def analyze(request):
 
 
     #return JSONResponse({'result': str(result)})
-    return JSONResponse({'result': str(result)})
+    return JSONResponse({'result': str(prediction)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
