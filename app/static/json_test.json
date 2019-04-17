@@ -1,0 +1,182 @@
+{
+  "605052578" : {
+    "name"  : "Atorvastatin 10mg",
+    "shape"  : "oval",
+    "color"    : "white",
+    "marking" : "APO A10"
+  },
+  "605052579" : {
+    "name"  : "Atorvastatin 20mg",
+    "shape"  : "oval",
+    "color"    : "white",
+    "marking" : "APO ATV20"
+  },
+  "605052580" : {
+    "name"  : "Atorvastatin 40mg",
+    "shape"  : "oval",
+    "color"    : "white",
+    "marking" : "APO ATV40"
+  },
+  "605052995" : {
+    "name"  : "Duloxetine 20mg",
+    "shape"  : "capsule_shape",
+    "color"   : "green",
+    "marking" : "APO D20"
+  },
+  "605052996" : {
+    "name"  : "Duloxetine 30mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue white",
+    "marking" : "APO D30"
+  },
+  "605052997" : {
+    "name"  : "Duloxetine 60mg",
+    "shape"  : "capsule_shape",
+    "color"   : "green blue",
+    "marking" : "APO D60"
+  },
+  "658620198" : {
+    "name"  : "Gabapentin 100mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "D 02"
+  },
+  "658620199" : {
+    "name"  : "Gabapentin 300mg",
+    "shape"  : "capsule_shape",
+    "color"   : "yellow",
+    "marking" : "D 03"
+  },
+  "684620126" : {
+    "name"  : "Gabapentin 600mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "G31"
+  },
+  "684620127" : {
+    "name"  : "Gabapentin 800mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "G13"
+  },
+  "003781800" : {
+    "name"  : "Levothyroxine 25mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "orange",
+    "marking" : "M L4"
+  },
+  "003781803" : {
+    "name"  : "Levothyroxine 50mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "M L5"
+  },
+  "003781805" : {
+    "name"  : "Levothyroxine 75mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "purple",
+    "marking" : "M L6"
+  },
+  "003781809" : {
+    "name"  : "Levothyroxine 100mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "yellow",
+    "marking" : "M L8"
+  },
+  "003781811" : {
+    "name"  : "Levothyroxine 112mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "pink",
+    "marking" : "M L9"
+  },
+  "607930850" : {
+    "name"  : "Levoxyl 25mcg",
+    "shape"  : "oval",
+    "color"   : "orange",
+    "marking" : "LEVOXYL dp25"
+  },
+  "607930851" : {
+    "name"  : "Levoxyl 50mcg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "LEVOXYL dp50"
+  },
+  "607930855" : {
+    "name"  : "Levoxyl 112mcg",
+    "shape"  : "oval",
+    "color"   : "pink",
+    "marking" : "LEVOXYL dp112"
+  },
+  "607930853" : {
+    "name"  : "Levoxyl 88mcg",
+    "shape"  : "oval",
+    "color"   : "green",
+    "marking" : "LEVOXYL dp88"
+  },
+  "435470352" : {
+    "name"  : "Lisinopril 5mg",
+    "shape"  : "capsule_shape",
+    "color"   : "yellow",
+    "marking" : "H145"
+  },
+  "435470353" : {
+    "name"  : "Lisinopril 10mg",
+    "shape"  : "capsule_shape",
+    "color"   : "pink",
+    "marking" : "H146"
+  },
+  "435470354" : {
+    "name"  : "Lisinopril 20mg",
+    "shape"  : "capsule_shape",
+    "color"   : "pink",
+    "marking" : "H147"
+  },
+  "007812790" : {
+    "name"  : "Omeprazole 20mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "OME 20"
+  },
+  "684620397" : {
+    "name"  : "Omeprazole 40mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue orange",
+    "marking" : "G232"
+  },
+  "681800351" : {
+    "name"  : "Sertraline 25mg",
+    "shape"  : "oval",
+    "color"   : "green",
+    "marking" : "LU DO1"
+  },
+  "681800352" : {
+    "name"  : "Sertraline 50mg",
+    "shape"  : "oval",
+    "color"   : "blue",
+    "marking" : "LU DO2"
+  },
+  "681800353" : {
+    "name"  : "Sertraline 100mg",
+    "shape"  : "oval",
+    "color"   : "yellow",
+    "marking" : "LU DO3"
+  },
+  "000937384" : {
+    "name"  : "Venlafaxine ER 37.5mg",
+    "shape"  : "capsule_shape",
+    "color"   : "gray white",
+    "marking" : "9373 84"
+  },
+  "000937386" : {
+    "name"  : "Venlafaxine ER 150mg",
+    "shape"  : "capsule_shape",
+    "color"   : "orange",
+    "marking" : "9373 86"
+  },
+  "000937385" : {
+    "name"  : "Venlafaxine ER 75mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "9373 85"
+  }
+}
