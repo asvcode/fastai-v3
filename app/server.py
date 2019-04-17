@@ -86,7 +86,7 @@ async def analyze(request):
     pred_drug = pred_name['name']
     pred_shape = pred_name['shape']
     pred_color = pred_name['color']
-    pred_ndc = pred_name['Drug']
+    #pred_ndc = pred_name['Drug']
 
 
     #pred_1_class = learn.data.classes[idxs[0]]
@@ -98,7 +98,7 @@ async def analyze(request):
 
     info = learn.data.classes
 
-    result = (f' Name: \n {pred_name} Shape: {pred_shape} \n Color: {pred_color} \n NDC: {pred_ndc}')
+    result = (f' Name: \n {pred_name} Shape: {pred_shape} \n Color: {pred_color} \n prediction: {prediction}')
 
 
 
