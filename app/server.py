@@ -79,7 +79,7 @@ async def analyze(request):
 
     #pred_1_class = learn.data.classes[idxs[0]]
     #pred_2_class = learn.data.classes[idxs[1]]
-    pred_1_class_name = pred_1_class['name']
+    pred_1_class_name = pred_2_class['name']
     pred_1_class_shape = pred_1_class['shape']
     pred_1_class_color = pred_1_class['color']
     pred_1_class_marking = pred_1_class['marking']
@@ -102,7 +102,8 @@ async def analyze(request):
     #result = (f' Model output: \n {prediction} {pred_1_class}\n {pred_1_prob} {pred_2_class} {pred_2_prob}')
 
 
-    return JSONResponse({'result': str(result)})
+    #return JSONResponse({'result': str(result)})
+    return JSONResponse({'result': str(result[0:20])})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
