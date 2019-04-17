@@ -96,7 +96,7 @@ async def analyze(request):
     else:
         #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
         #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-        result = (pred_1_class, pred_1_prob, pred_2_class)
+        result = ('pred_1_class', 'pred_1_prob', 'pred_2_class')
 
 
 
