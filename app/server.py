@@ -46,7 +46,7 @@ async def setup_learner():
      #data_bunch = ImageDataBunch.single_from_classes(path, classes, size=296).normalize(imagenet_stats)
      data = ImageDataBunch.from_folder(path, bs=64, size=296)
      data.normalize(imagenet_stats)
-     learn = cnn_learner(data_bunch, models.squeezenet1_0, pretrained=False)
+     learn = cnn_learner(data, models.squeezenet1_0, pretrained=False)
      learn.load(export_file_name)
      return learn
 
