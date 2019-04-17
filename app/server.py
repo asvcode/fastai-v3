@@ -14,8 +14,8 @@ import pretrainedmodels
 #export_file_url = 'https://www.dropbox.com/s/6ubzhbra6rc1zbd/cardene_sq.pkl?dl=1'
 #export_file_name = 'cardene_sq.pkl'
 
-export_file_url = 'https://www.dropbox.com/s/9q4aaxhmjkk76ol/test_json.pth?dl=1'
-export_file_name = 'test_json'
+export_file_url = 'https://www.dropbox.com/s/fjkf01oe76cspnr/squeeze_UNTRAINED_rerun_one_overfit_0415_84point5.pth?dl=1'
+export_file_name = 'squeeze_UNTRAINED_rerun_one_overfit_0415_84point5'
 
 #export_file_url = 'https://www.dropbox.com/s/1abrij8d4cinrts/squeeze_UNTRAINED_org_0415.pth?dl=1'
 #export_file_name = 'squeeze_UNTRAINED_org_0415'
