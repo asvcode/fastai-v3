@@ -20,7 +20,10 @@ export_file_name = 'test_json'
 #export_file_url = 'https://www.dropbox.com/s/1abrij8d4cinrts/squeeze_UNTRAINED_org_0415.pth?dl=1'
 #export_file_name = 'squeeze_UNTRAINED_org_0415'
 
-classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin 300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
+#classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin #300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
+
+classes = ['000937384', '000937385', '000937386', '003781800', '003781803', '003781805', '003781809', '003781811', '007812790', '435470352', '435470353', '435470354', '605052578', '605052579', '605052580', '605052995', '605052996', '605052997', '607930850', '607930851', '607930853', '607930855', '658620198',
+'658620199', '681800351', '681800352', '681800353', '684620126', '684620127', '684620397']
 
 with open('app/static/json_test.json', 'r') as f:
     cat_to_name = json.load(f)
@@ -40,7 +43,9 @@ async def download_file(url, dest):
 
 async def setup_learner():
      await download_file(export_file_url, path/'models'/f'{export_file_name}.pth')
-     data_bunch = ImageDataBunch.single_from_classes(path, classes, size=296).normalize(imagenet_stats)
+     #data_bunch = ImageDataBunch.single_from_classes(path, classes, size=296).normalize(imagenet_stats)
+     data = ImageDataBunch.from_folder(path, bs=64, size=296)
+     data.normalize(imagenet_stats)
      learn = cnn_learner(data_bunch, models.squeezenet1_0, pretrained=False)
      learn.load(export_file_name)
      return learn
