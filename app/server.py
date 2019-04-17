@@ -14,8 +14,8 @@ import pretrainedmodels
 #export_file_url = 'https://www.dropbox.com/s/6ubzhbra6rc1zbd/cardene_sq.pkl?dl=1'
 #export_file_name = 'cardene_sq.pkl'
 
-export_file_url = 'https://www.dropbox.com/s/i6wd5fhoofkl0rc/squeeze_UNTRAINED_rerun_one_overfit_30_0415.pth?dl=1'
-export_file_name = 'squeeze_UNTRAINED_rerun_one_overfit_30_0415'
+export_file_url = 'https://www.dropbox.com/s/9q4aaxhmjkk76ol/test_json.pth?dl=1'
+export_file_name = 'test_json'
 
 #export_file_url = 'https://www.dropbox.com/s/1abrij8d4cinrts/squeeze_UNTRAINED_org_0415.pth?dl=1'
 #export_file_name = 'squeeze_UNTRAINED_org_0415'
@@ -96,7 +96,7 @@ async def analyze(request):
     else:
         #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
         #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-        result = ('pred_1_class', 'pred_1_prob', 'pred_2_class')
+        result = ('{pred_1_class} {pred_1_prob} {pred_2_class})
 
 
 
