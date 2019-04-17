@@ -77,6 +77,7 @@ async def analyze(request):
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
 
+
     #pred_1_class = learn.data.classes[idxs[0]]
     #pred_2_class = learn.data.classes[idxs[1]]
     #pred_1_class_name = pred_1_class['name']
@@ -90,12 +91,12 @@ async def analyze(request):
 
     if pred_1_prob <= 80:
         #rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
-        result = (f' Model is NOT Confident: \n ({pred_1_prob}%) \n {pred_1_class}')
+        result = (pred_1_class)
 
     else:
         #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
         #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-        result = (f'Model IS Confident: \n {pred_1_class} :this is the result')
+        result = (pred_1_class)
 
 
 
@@ -103,7 +104,7 @@ async def analyze(request):
 
 
     #return JSONResponse({'result': str(result)})
-    return JSONResponse({'result': str(result)})
+    return JSONResponse({'result': (result)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
