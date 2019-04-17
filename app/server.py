@@ -22,7 +22,7 @@ export_file_name = 'squeeze_UNTRAINED_rerun_one_overfit_30_0415'
 
 classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin 300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
 
-with open('app/static/Test30.json', 'r') as f:
+with open('app/static/json_test.json', 'r') as f:
     cat_to_name = json.load(f)
 
 path = Path(__file__).parent
@@ -64,7 +64,7 @@ async def analyze(request):
     prediction, indice, losses = learn.predict(img)
     preds_sorted, idxs = losses.sort(descending=True)
 
-    with open('app/static/Test30.json', 'r') as f:
+    with open('app/static/json_test.json', 'r') as f:
         cat_to_name = json.load(f)
 
     class_to_idx = {sorted(cat_to_name)[i]: i for i in range(len(cat_to_name))}
@@ -77,20 +77,25 @@ async def analyze(request):
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
 
+    #pred_1_class = learn.data.classes[idxs[0]]
+    #pred_2_class = learn.data.classes[idxs[1]]
+    pred_1_class_name = pred_1_class['name']
+    pred_1_class_shape = pred_1_class['shape']
+    pred_1_class_color = pred_1_class['color']
+    pred_1_class_marking = pred_1_class['marking']
+
     info = learn.data.classes
 
     #result = (f' info: \n  str{prediction} {pred_1_class} ({pred_1_prob}%)')
 
     if pred_1_prob <= 80:
         #rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
-        result = (f' Model is NOT Confident: \n {prediction} {pred_1_class} ({pred_1_prob}%)')
+        result = (f' Model is NOT Confident: \n ({pred_1_prob}%) \n {pred_1_class_shape} \n {pred_1_class_color}')
 
     else:
         #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
         #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-        result = (f'Model IS Confident: \n {prediction} {pred_1_class} ({pred_1_prob}%)')
-
-
+        result = (f'Model IS Confident: \n {pred_1_class} ({pred_1_prob}%) \n {pred_1_class_shape} {pred_1_class_color} {pred_1_class_marking}')
 
 
 
