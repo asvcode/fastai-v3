@@ -25,8 +25,8 @@ export_file_name = 'test_json'
 classes = ['000937384', '000937385', '000937386', '003781800', '003781803', '003781805', '003781809', '003781811', '007812790', '435470352', '435470353', '435470354', '605052578', '605052579', '605052580', '605052995', '605052996', '605052997', '607930850', '607930851', '607930853', '607930855', '658620198',
 '658620199', '681800351', '681800352', '681800353', '684620126', '684620127', '684620397']
 
-with open('app/static/json_test.json', 'r') as f:
-    cat_to_name = json.load(f)
+#with open('app/static/json_test.json', 'r') as f:
+#    cat_to_name = json.load(f)
 
 path = Path(__file__).parent
 
@@ -69,7 +69,7 @@ async def analyze(request):
     pred_1_class, indice, losses = learn.predict(img)
     preds_sorted, idxs = losses.sort(descending=True)
 
-    with open('app/static/json_test.json', 'r') as f:
+    with open('app/static/json_test_two.json', 'r') as f:
         cat_to_name = json.load(f)
 
     class_to_idx = {sorted(cat_to_name)[i]: i for i in range(len(cat_to_name))}
