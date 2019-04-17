@@ -90,12 +90,12 @@ async def analyze(request):
 
     if pred_1_prob <= 80:
         #rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
-        result = (f' Model is NOT Confident: \n ({pred_1_prob}%) \n {pred_1_class['shape']} \n {pred_1_class['color']}')
+        result = (f' Model is NOT Confident: \n ({pred_1_prob}%) \n {pred_1_class}')
 
     else:
         #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
         #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-        result = (f'Model IS Confident: \n {pred_1_class} ({pred_1_prob}%) \n {pred_1_class['shape']} {pred_1_class['color']} {pred_1_class['marking']}')
+        result = (f'Model IS Confident: \n {pred_1_class} ({pred_1_prob}%)')
 
 
 
