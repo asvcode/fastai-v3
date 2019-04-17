@@ -69,7 +69,7 @@ async def analyze(request):
     pred_1_class, indice, losses = learn.predict(img)
     preds_sorted, idxs = losses.sort(descending=True)
 
-    with open('app/static/json_test_two.json', 'r') as f:
+    with open('app/static/json_test.json', 'r') as f:
         cat_to_name = json.load(f)
 
     #class_to_idx = {sorted(cat_to_name)[i]: i for i in range(len(cat_to_name))}
