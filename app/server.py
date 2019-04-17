@@ -72,7 +72,7 @@ async def analyze(request):
     with open('app/static/json_test_two.json', 'r') as f:
         cat_to_name = json.load(f)
 
-    class_to_idx = {sorted(cat_to_name)[i]: i for i in range(len(cat_to_name))}
+    #class_to_idx = {sorted(cat_to_name)[i]: i for i in range(len(cat_to_name))}
 
     #idx_to_class = {val: key for key, val in class_to_idx.items()}
 
