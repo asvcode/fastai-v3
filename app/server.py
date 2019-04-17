@@ -104,7 +104,7 @@ async def analyze(request):
 
 
     #return JSONResponse({'result': str(result)})
-    return JSONResponse({'result': (result)})
+    return JSONResponse({'result': (pred_1_class)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
