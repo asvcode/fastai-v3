@@ -61,7 +61,7 @@ async def analyze(request):
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
-    prediction, indice, losses = learn.predict(img)
+    pred_1_class, indice, losses = learn.predict(img)
     preds_sorted, idxs = losses.sort(descending=True)
 
     with open('app/static/json_test.json', 'r') as f:
