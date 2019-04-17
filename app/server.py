@@ -86,7 +86,7 @@ async def analyze(request):
     pred_drug = pred_name['name']
     pred_shape = pred_name['shape']
     pred_color = pred_name['color']
-    #pred_ndc = pred_name['Drug']
+    pred_marking = pred_name['marking']
 
 
     #pred_1_class = learn.data.classes[idxs[0]]
@@ -96,9 +96,18 @@ async def analyze(request):
     #pred_1_class_color = pred_1_class['color']
     #pred_1_class_marking = pred_1_class['marking']
 
+    if pred_1_prob <= 80:
+            #rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
+        result = (f' Model IS NOT Confident: \n ({pred_1_prob}%) \n Shape: {pred_shape} \n Color: {pred_color}')
+
+    else:
+            #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
+            #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
+        result = (f' Model IS confident: Drug Name: \n {pred_drug} \n ({pred_1_prob}% ) Shape: {pred_shape} \n Color: {pred_color} \n Marking: {pred_marking} \n NDC: {prediction}')
+
     info = learn.data.classes
 
-    result = (f' Name: \n {pred_name} Shape: {pred_shape} \n Color: {pred_color} \n prediction: {prediction}')
+    #result = (f' Drug Name: \n {pred_drug} \n ({pred_1_prob}% ) Shape: {pred_shape} \n Color: {pred_color} \n Marking: {pred_marking} \n NDC: {prediction}')
 
 
 
