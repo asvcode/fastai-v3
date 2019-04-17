@@ -79,10 +79,10 @@ async def analyze(request):
 
     #pred_1_class = learn.data.classes[idxs[0]]
     #pred_2_class = learn.data.classes[idxs[1]]
-    pred_1_class_name = pred_2_class['name']
-    pred_1_class_shape = pred_1_class['shape']
-    pred_1_class_color = pred_1_class['color']
-    pred_1_class_marking = pred_1_class['marking']
+    #pred_1_class_name = pred_1_class['name']
+    #pred_1_class_shape = pred_1_class['shape']
+    #pred_1_class_color = pred_1_class['color']
+    #pred_1_class_marking = pred_1_class['marking']
 
     info = learn.data.classes
 
@@ -90,12 +90,12 @@ async def analyze(request):
 
     if pred_1_prob <= 80:
         #rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
-        result = (f' Model is NOT Confident: \n ({pred_1_prob}%) \n {pred_1_class_shape} \n {pred_1_class_color}')
+        result = (f' Model is NOT Confident: \n ({pred_1_prob}%) \n {pred_1_class['shape']} \n {pred_1_class['color']}')
 
     else:
         #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
         #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-        result = (f'Model IS Confident: \n {pred_1_class} ({pred_1_prob}%) \n {pred_1_class_shape} {pred_1_class_color} {pred_1_class_marking}')
+        result = (f'Model IS Confident: \n {pred_1_class} ({pred_1_prob}%) \n {pred_1_class['shape']} {pred_1_class['color']} {pred_1_class['marking']}')
 
 
 
