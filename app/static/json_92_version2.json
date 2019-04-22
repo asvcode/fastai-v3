@@ -1,0 +1,646 @@
+{
+  "605052578" : {
+    "Drug" : "605052578",
+    "name"  : "Atorvastatin 10mg",
+    "shape"  : "oval",
+    "color"    : "white",
+    "marking" : "APO A10"
+  },
+  "605052579" : {
+    "Drug" : "605052579",
+    "name"  : "Atorvastatin 20mg",
+    "shape"  : "oval",
+    "color"    : "white",
+    "marking" : "APO ATV20"
+  },
+  "605052580" : {
+    "Drug" : "605052580",
+    "name"  : "Atorvastatin 40mg",
+    "shape"  : "oval",
+    "color"    : "white",
+    "marking" : "APO ATV40"
+  },
+  "605052995" : {
+    "Drug" : "605052995",
+    "name"  : "Duloxetine 20mg",
+    "shape"  : "capsule_shape",
+    "color"   : "green",
+    "marking" : "APO D20"
+  },
+  "605052996" : {
+    "Drug" : "605052996",
+    "name"  : "Duloxetine 30mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue white",
+    "marking" : "APO D30"
+  },
+  "605052997" : {
+    "Drug" : "605052997",
+    "name"  : "Duloxetine 60mg",
+    "shape"  : "capsule_shape",
+    "color"   : "green blue",
+    "marking" : "APO D60"
+  },
+  "658620198" : {
+    "Drug" : "658620198",
+    "name"  : "Gabapentin 100mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "D 02"
+  },
+  "658620199" : {
+    "Drug" : "658620199",
+    "name"  : "Gabapentin 300mg",
+    "shape"  : "capsule_shape",
+    "color"   : "yellow",
+    "marking" : "D 03"
+  },
+  "684620126" : {
+    "Drug" : "684620126",
+    "name"  : "Gabapentin 600mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "G31"
+  },
+  "684620127" : {
+    "Drug" : "684620127",
+    "name"  : "Gabapentin 800mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "G13"
+  },
+  "003781800" : {
+    "Drug" : "003781800",
+    "name"  : "Levothyroxine 25mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "orange",
+    "marking" : "M L4"
+  },
+  "003781803" : {
+    "Drug" : "003781803",
+    "name"  : "Levothyroxine 50mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "M L5"
+  },
+  "003781805" : {
+    "Drug" : "003781805",
+    "name"  : "Levothyroxine 75mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "purple",
+    "marking" : "M L6"
+  },
+  "003781809" : {
+    "Drug" : "003781809",
+    "name"  : "Levothyroxine 100mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "yellow",
+    "marking" : "M L8"
+  },
+  "003781811" : {
+    "Drug" : "003781811",
+    "name"  : "Levothyroxine 112mcg",
+    "shape"  : "capsule_shape",
+    "color"   : "pink",
+    "marking" : "M L9"
+  },
+  "607930850" : {
+    "Drug" : "607930850",
+    "name"  : "Levoxyl 25mcg",
+    "shape"  : "oval",
+    "color"   : "orange",
+    "marking" : "LEVOXYL dp25"
+  },
+  "607930851" : {
+    "Drug" : "607930851",
+    "name"  : "Levoxyl 50mcg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "LEVOXYL dp50"
+  },
+  "607930855" : {
+    "Drug" : "607930855",
+    "name"  : "Levoxyl 112mcg",
+    "shape"  : "oval",
+    "color"   : "pink",
+    "marking" : "LEVOXYL dp112"
+  },
+  "607930853" : {
+    "Drug" : "607930853",
+    "name"  : "Levoxyl 88mcg",
+    "shape"  : "oval",
+    "color"   : "green",
+    "marking" : "LEVOXYL dp88"
+  },
+  "435470352" : {
+    "Drug" : "435470352",
+    "name"  : "Lisinopril 5mg",
+    "shape"  : "capsule_shape",
+    "color"   : "yellow",
+    "marking" : "H145"
+  },
+  "435470353" : {
+    "Drug" : "435470353",
+    "name"  : "Lisinopril 10mg",
+    "shape"  : "capsule_shape",
+    "color"   : "pink",
+    "marking" : "H146"
+  },
+  "435470354" : {
+    "Drug" : "435470354",
+    "name"  : "Lisinopril 20mg",
+    "shape"  : "capsule_shape",
+    "color"   : "pink",
+    "marking" : "H147"
+  },
+  "007812790" : {
+    "Drug" : "007812790",
+    "name"  : "Omeprazole 20mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "OME 20"
+  },
+  "684620397" : {
+    "Drug" : "684620397",
+    "name"  : "Omeprazole 40mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue orange",
+    "marking" : "G232"
+  },
+  "681800351" : {
+    "Drug" : "681800351",
+    "name"  : "Sertraline 25mg",
+    "shape"  : "oval",
+    "color"   : "green",
+    "marking" : "LU DO1"
+  },
+  "681800352" : {
+    "Drug" : "681800352",
+    "name"  : "Sertraline 50mg",
+    "shape"  : "oval",
+    "color"   : "blue",
+    "marking" : "LU DO2"
+  },
+  "681800353" : {
+    "Drug" : "681800353",
+    "name"  : "Sertraline 100mg",
+    "shape"  : "oval",
+    "color"   : "yellow",
+    "marking" : "LU DO3"
+  },
+  "000937384" : {
+    "Drug" : "000937384",
+    "name"  : "Venlafaxine ER 37.5mg",
+    "shape"  : "capsule_shape",
+    "color"   : "gray white",
+    "marking" : "9373 84"
+  },
+  "000937386" : {
+    "Drug" : "000937386",
+    "name"  : "Venlafaxine ER 150mg",
+    "shape"  : "capsule_shape",
+    "color"   : "orange",
+    "marking" : "9373 86"
+  },
+  "000937385" : {
+    "Drug" : "000937385",
+    "name"  : "Venlafaxine ER 75mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "9373 85"
+  },
+  "000024463" : {
+    "Drug" : "000024463",
+    "name"  : "Cialis 10mg",
+    "shape"  : "oval",
+    "color"   : "yellow",
+    "marking" : "C 10"
+  },
+  "000024464" : {
+    "Drug" : "000024464",
+    "name"  : "Cialis 20mg",
+    "shape"  : "oval",
+    "color"   : "yellow",
+    "marking" : "C 20"
+  },
+  "000544179" : {
+    "Drug" : "000544179",
+    "name"  : "Dexamethasone 0.5mg",
+    "shape"  : "round",
+    "color"   : "yellow",
+    "marking" : "54 299"
+  },
+  "000544181" : {
+    "Drug" : "000544181",
+    "name"  : "Dexamethasone 1mg",
+    "shape"  : "round",
+    "color"   : "yellow",
+    "marking" : "54 489"
+  },
+  "000544182" : {
+    "Drug" : "000544182",
+    "name"  : "Dexamethasone 1.5mg",
+    "shape"  : "round",
+    "color"   : "pink",
+    "marking" : "54 943"
+  },
+  "000544183" : {
+    "Drug" : "000544183",
+    "name"  : "Dexamethasone 2mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "54 662"
+  },
+  "000544184" : {
+    "Drug" : "000544184",
+    "name"  : "Dexamethasone 4mg",
+    "shape"  : "round",
+    "color"   : "green",
+    "marking" : "54 892"
+  },
+  "000694220" : {
+    "Drug" : "000694220",
+    "name"  : "Viagra 100mg",
+    "shape"  : "four sided",
+    "color"   : "blue",
+    "marking" : "PFIZER VGR100"
+  },
+  "000711012"  : {
+    "Drug" : "000711012",
+    "name"  : "Lyrica 25mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "PFIZER PGN 25"
+  },
+  "000711013" : {
+    "Drug" : "000711013",
+    "name"  : "Lyrica 50mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "PFIZER PGN 50"
+  },
+  "000711014" : {
+    "Drug" : "000711014",
+    "name"  : "Lyrica 75mg",
+    "shape"  : "capsule_shape",
+    "color"   : "orange white",
+    "marking" : "PFIZER PGN 75"
+  },
+  "000711015" : {
+    "Drug" : "000711015",
+    "name"  : "Lyrica 100mg",
+    "shape"  : "capsule_shape",
+    "color"   : "orange",
+    "marking" : "PFIZER PGN 100"
+  },
+  "000711016" : {
+    "Drug" : "000711016",
+    "name"  : "Lyrica 150mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "PFIZER PGN 150"
+  },
+  "000930753" : {
+    "Drug" : "000930753",
+    "name"  : "Atenolol 100mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "93 753 TEVA 753"
+  },
+  "000932210" : {
+    "Drug" : "000932210",
+    "name"  : "Sucralfate 1g",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "TEVA 2210"
+  },
+  "000933123" : {
+    "Drug" : "000933123",
+    "name"  : "Dicloxacillin 250mg",
+    "shape"  : "capsule_shape",
+    "color"   : "green",
+    "marking" : "TEVA 3123"
+  },
+  "000933125" : {
+    "Drug" : "000933125",
+    "name"  : "Dicloxacillin 500mg",
+    "shape"  : "capsule_shape",
+    "color"   : "green",
+    "marking" : "TEVA 3125"
+  },
+  "001725728" : {
+    "Drug" : "001725728",
+    "name"  : "Famotidine 20mg",
+    "shape"  : "round",
+    "color"   : "beige",
+    "marking" : "TEVA 5728"
+  },
+  "001725729" : {
+    "Drug" : "001725729",
+    "name"  : "Famotidine 40mg",
+    "shape"  : "round",
+    "color"   : "tan",
+    "marking" : "TEVA 5729"
+  },
+  "001850674" : {
+    "Drug" : "001850674",
+    "name"  : "Hydroxyzine 25mg",
+    "shape"  : "capsule_shape",
+    "color"   : "green",
+    "marking" : "E 613 E 613"
+  },
+  "003642337" : {
+    "Drug" : "003642337",
+    "name"  : "Clindmycin 150mg",
+    "shape"  : "capsule_shape",
+    "color"   : "grey pink",
+    "marking" : "DAN 5708"
+  },
+  "003781160" : {
+    "Drug" : "003781160",
+    "name"  : "Guanfacine 1mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "M G4"
+  },
+  "003784250" : {
+    "Drug" : "003784250",
+    "name"  : "Doxepin 50mg",
+    "shape"  : "capsule_shape",
+    "color"   : "yellow",
+    "marking" : "MYLAN 4250"
+  },
+  "003786410" : {
+    "Drug" : "003786410",
+    "name"  : "Doxepin 100mg",
+    "shape"  : "capsule_shape",
+    "color"   : "green white",
+    "marking" : "MYLAN 6410"
+  },
+  "005910844" : {
+    "Drug" : "005910844",
+    "name"  : "Glipizide ER 5mg",
+    "shape"  : "round",
+    "color"   : "orange",
+    "marking" : "WPI 844"
+  },
+  "005910900" : {
+    "Drug" : "005910900",
+    "name"  : "Glipizide ER 2.5mg",
+    "shape"  : "round",
+    "color"   : "yellow",
+    "marking" : "WPI 900"
+  },
+  "107020026" : {
+    "Drug" : "107020026",
+    "name"  : "Phentermine 15mg",
+    "shape"  : "capsule_shape",
+    "color"   : "gray yellow",
+    "marking" : "K 26"
+  },
+  "107020027" : {
+    "Drug" : "107020027",
+    "name"  : "Phentermine 30mg",
+    "shape"  : "capsule_shape",
+    "color"   : "yellow",
+    "marking" : "K 27"
+  },
+  "136680113" : {
+    "Drug" : "136680113",
+    "name"  : "Losartan 25mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "25 113"
+  },
+  "136680114" : {
+    "Drug" : "136680114",
+    "name"  : "Losartan 50mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "114"
+  },
+  "136680115" : {
+    "Drug" : "136680115",
+    "name"  : "Losartan 100mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "100 115"
+  },
+  "433860356" : {
+    "Drug" : "433860356",
+    "name"  : "APAP 325mg Hydrocodone 5mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white",
+    "marking" : "n356 5"
+  },
+  "501110433" : {
+    "Drug" : "501110433",
+    "name"  : "Trazodone 50mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "SL 433"
+  },
+  "501110434" : {
+    "Drug" : "501110434",
+    "name"  : "Trazodone 100mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "SL 434"
+  },
+  "591480006" : {
+    "Drug" : "591480006",
+    "name"  : "Abilify 2mg",
+    "shape"  : "rectangle",
+    "color"   : "green",
+    "marking" : "A006 2"
+  },
+  "591480011" : {
+    "Drug" : "591480011",
+    "name"  : "Abilify 30mg",
+    "shape"  : "round",
+    "color"   : "pink",
+    "marking" : "A011 30"
+  },
+  "620370710" : {
+    "Drug" : "620370710",
+    "name"  : "Potassium Chloride ER 10meq",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "Andrx 30"
+  },
+  "620370999" : {
+    "Drug" : "620370999",
+    "name"  : "Potassium Chloride ER 20meq",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "ABRS 123"
+  },
+  "633040693" : {
+    "Drug" : "633040693",
+    "name"  : "Clindmycin 300mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue",
+    "marking" : "RX 693"
+  },
+  "651620076" : {
+    "Drug" : "651620076",
+    "name"  : "Naproxen 250mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "250 IP188"
+  },
+  "651620077" : {
+    "Drug" : "651620077",
+    "name"  : "Naproxen 375mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "375 IP189"
+  },
+  "651620627" : {
+    "Drug" : "651620627",
+    "name"  : "Tramadol 50mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "AN 627"
+  },
+  "658620185" : {
+    "Drug" : "658620185",
+    "name"  : "Clindamycin 150mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue green",
+    "marking" : "C 39"
+  },
+  "658620448" : {
+    "Drug" : "658620448",
+    "name"  : "Valcyclovir 500mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue",
+    "marking" : "F 82"
+  },
+  "658620449" : {
+    "Drug" : "658620449",
+    "name"  : "Valcyclovir 1g",
+    "shape"  : "capsule_shape",
+    "color"   : "blue",
+    "marking" : "F 83"
+  },
+  "659775036" : {
+    "Drug" : "659775036",
+    "name"  : "Levetiracetam 250mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue",
+    "marking" : "H 87"
+  },
+  "659775037" : {
+    "Drug" : "659775037",
+    "name"  : "Levetiracetam 500mg",
+    "shape"  : "capsule_shape",
+    "color"   : "yellow",
+    "marking" : "H 88"
+  },
+  "669930060" : {
+    "Drug" : "669930060",
+    "name"  : "Malarone 250/100mg",
+    "shape"  : "round",
+    "color"   : "pink",
+    "marking" : "GX CM3"
+  },
+  "681800135" : {
+    "Drug" : "681800135",
+    "name"  : "Escitalopram 10mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "W22 LU"
+  },
+  "681800136" : {
+    "Drug" : "681800136",
+    "name"  : "Escitalopram 20mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "W23 LU"
+  },
+  "681800137" : {
+    "Drug" : "681800137",
+    "name"  : "Escitalopram 5mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "W21 LU"
+  },
+  "681800302" : {
+    "Drug" : "681800302",
+    "name"  : "Cefuroxime 250mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "302 LUPIN"
+  },
+  "681800303" : {
+    "Drug" : "681800303",
+    "name"  : "Cefuroxime 500mg",
+    "shape"  : "oval",
+    "color"   : "white",
+    "marking" : "303 LUPIN"
+  },
+  "681800396" : {
+    "Drug" : "681800396",
+    "name"  : "Celecoxib 100mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue white",
+    "marking" : "LU N42"
+  },
+  "681800397" : {
+    "Drug" : "681800397",
+    "name"  : "Celecoxib 200mg",
+    "shape"  : "capsule_shape",
+    "color"   : "white yellow",
+    "marking" : "LU N43"
+  },
+  "681800513" : {
+    "Drug" : "681800513",
+    "name"  : "Lisinopril 5mg",
+    "shape"  : "round",
+    "color"   : "pink",
+    "marking" : "5"
+  },
+  "681800517" : {
+    "Drug" : "681800517",
+    "name"  : "Lisinopril 40mg",
+    "shape"  : "round",
+    "color"   : "yellow",
+    "marking" : "LUPIN 40"
+  },
+  "681800590" : {
+    "Drug" : "681800590",
+    "name"  : "Ramipril 5mg",
+    "shape"  : "capsule_shape",
+    "color"   : "red",
+    "marking" : "LUPIN RAMIPRIL 5MG"
+  },
+  "681800591" : {
+    "Drug" : "681800591",
+    "name"  : "Ramipril 10mg",
+    "shape"  : "capsule_shape",
+    "color"   : "blue",
+    "marking" : "LUPIN RAMIPRIL 10MG"
+  },
+  "681800980" : {
+    "Drug" : "681800980",
+    "name"  : "Lisinopril 10mg",
+    "shape"  : "round",
+    "color"   : "pink",
+    "marking" : "LUPIN 10"
+  },
+  "681800981" : {
+    "Drug" : "681800981",
+    "name"  : "Lisinopril 20mg",
+    "shape"  : "round",
+    "color"   : "pink",
+    "marking" : "LUPIN 20"
+  },
+  "683820022" : {
+    "Drug" : "683820022",
+    "name"  : "Atenolol 25mg",
+    "shape"  : "round",
+    "color"   : "white",
+    "marking" : "Z 65"
+  }
+}
