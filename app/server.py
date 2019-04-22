@@ -14,8 +14,8 @@ import pretrainedmodels
 #export_file_url = 'https://www.dropbox.com/s/6ubzhbra6rc1zbd/cardene_sq.pkl?dl=1'
 #export_file_name = 'cardene_sq.pkl'
 
-export_file_url = 'https://www.dropbox.com/s/uvyf78rjdwm8f7b/resnet50_json92_40epoch_0896471.pth?dl=1'
-export_file_name = 'resnet50_json92_40epoch_0896471'
+export_file_url = 'https://www.dropbox.com/s/u7rfel2ireslyn6/resnet34_json92_ORIGINAL_One.pth?dl=1'
+export_file_name = 'resnet34_json92_ORIGINAL_One'
 
 #export_file_url = 'https://www.dropbox.com/s/1abrij8d4cinrts/squeeze_UNTRAINED_org_0415.pth?dl=1'
 #export_file_name = 'squeeze_UNTRAINED_org_0415'
@@ -93,7 +93,7 @@ async def analyze(request):
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
 
-    pred_name = cat_to_name[str(prediction)]
+    pred_name = cat_to_name[prediction]
     pred_drug = pred_name['name']
     pred_shape = pred_name['shape']
     pred_color = pred_name['color']
