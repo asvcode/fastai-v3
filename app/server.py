@@ -93,7 +93,7 @@ async def analyze(request):
     pred_1_prob = np.round(100*preds_sorted[0].item(),2)
     pred_2_prob = np.round(100*preds_sorted[1].item(),2)
 
-    pred_name = cat_to_name[prediction]
+    pred_name = cat_to_name[str(prediction)]
     pred_drug = pred_name['name']
     pred_shape = pred_name['shape']
     pred_color = pred_name['color']
