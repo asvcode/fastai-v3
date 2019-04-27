@@ -114,9 +114,9 @@ async def analyze(request):
     else:
             #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
             #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-        result = (f' Model IS confident: Drug Name: \n {pred_drug} \n ({pred_1_prob}% ) Shape: {pred_shape} \n Color: {pred_color} \n Marking: {pred_marking} \n NDC: {prediction}')
+        result = (f' Model IS confident: Drug Name: \n {pred_drug} {prediction} \n ({pred_1_prob}% ) Shape: {pred_shape} \n Color: {pred_color} \n Marking: {pred_marking} \n NDC: {prediction}')
 
-    info = learn.data.classes
+    #info = learn.data.classes
 
     #result = (f' Drug Name: \n {pred_drug} \n ({pred_1_prob}% ) Shape: {pred_shape} \n Color: {pred_color} \n Marking: {pred_marking} \n NDC: {prediction}')
 
