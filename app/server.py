@@ -17,8 +17,8 @@ import pretrainedmodels
 #export_file_url = 'https://www.dropbox.com/s/u7rfel2ireslyn6/resnet34_json92_ORIGINAL_One.pth?dl=1'
 #export_file_name = 'resnet34_json92_ORIGINAL_One'
 
-export_file_url = 'https://www.dropbox.com/s/o3janbsv29hqdnq/resnet34_json92_ORIGINAL_One_Additional.pth?dl=1'
-export_file_name = 'resnet34_json92_ORIGINAL_One_Additional'
+export_file_url = 'https://www.dropbox.com/s/fjkf01oe76cspnr/squeeze_UNTRAINED_rerun_one_overfit_0415_84point5.pth?dl=1'
+export_file_name = 'squeeze_UNTRAINED_rerun_one_overfit_0415_84point5'
 
 
 #export_file_url = 'https://www.dropbox.com/s/1abrij8d4cinrts/squeeze_UNTRAINED_org_0415.pth?dl=1'
