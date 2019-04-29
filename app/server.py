@@ -130,7 +130,7 @@ async def analyze(request):
     #result = (f' Model output: \n {prediction} {pred_1_class}\n {pred_1_prob} {pred_2_class} {pred_2_prob}')
 
     #Testing
-    result = (f' {prediction} {pred_name})
+    result = (f' {prediction} {pred_name}')
 
     #return JSONResponse({'result': str(result)})
     return JSONResponse({'result': str(result)})
