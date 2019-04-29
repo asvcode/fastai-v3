@@ -106,7 +106,7 @@ async def analyze(request):
     pred_marking = pred_name['marking']
 
 
-    #pred_1_class = learn.data.classes[idxs[0]]
+    pred_1_class_sort = learn.data.classes[idxs[0]]
     #pred_2_class = learn.data.classes[idxs[1]]
     #pred_1_class_name = pred_1_class['name']
     #pred_1_class_shape = pred_1_class['shape']
@@ -132,7 +132,7 @@ async def analyze(request):
     #result = (f' Model output: \n {prediction} {pred_1_class}\n {pred_1_prob} {pred_2_class} {pred_2_prob}')
 
     #Testing
-    result = (f' {prediction} {pred_1_class} {pred_name} {pred_name_two}')
+    result = (f' {prediction} {pred_1_class} {pred_1_class_sort} {pred_name} {pred_name_two}')
 
     #return JSONResponse({'result': str(result)})
     return JSONResponse({'result': str(result)})
