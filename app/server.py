@@ -99,14 +99,14 @@ async def analyze(request):
     #pred_1_class_color = pred_1_class['color']
     #pred_1_class_marking = pred_1_class['marking']
 
-    #if pred_1_prob <= 80:
+    if pred_1_prob <= 80:
             #rs+='<p>(Note: Model is NOT confident with this prediction)</p>\n'
-    #    result = (f' Model IS NOT Confident: \n ({pred_1_prob}%) \n Shape: {pred_shape} \n Color: {pred_color}')
+        result = (f' Model IS NOT Confident: Highest Probability \n {pred_drug} ({pred_1_prob}%)')
 
-    #else:
+    else:
             #rs+=(f'<p>(Model IS confident: )</p>' + first_choice)
             #rs+=f'<p>Model IS confident <b>{first_choice}</b> prediction: </p>\n'
-    #    result = (f' Model IS confident: Drug Name: \n {pred_drug} {prediction} \n ({pred_1_prob}% ) Shape: {pred_shape} \n Color: {pred_color} \n Marking: {pred_marking} \n NDC: {prediction}')
+        result = (f' Model IS confident: Drug Name: \n {pred_drug} {prediction} \n ({pred_1_prob}% )')
 
     #info = learn.data.classes
 
@@ -118,7 +118,7 @@ async def analyze(request):
     #result = (f' Model output: \n {prediction} {pred_1_class}\n {pred_1_prob} {pred_2_class} {pred_2_prob}')
 
     #Testing
-    result = (f' {prediction} {pred_drug} {pred_1_class_sort}')
+    #result = (f' {prediction} {pred_drug} ({pred_1_prob}%)')
 
     #return JSONResponse({'result': str(result)})
     return JSONResponse({'result': str(result)})
