@@ -11,14 +11,14 @@ from fastai.vision import *
 from fastai.vision.models import cadene_models
 import pretrainedmodels
 #Cardene Squeezenet
-#export_file_url = 'https://www.dropbox.com/s/6ubzhbra6rc1zbd/cardene_sq.pkl?dl=1'
-#export_file_name = 'cardene_sq.pkl'
+export_file_url = 'https://www.dropbox.com/s/y86gftj01c6ilm7/resnet152_one.pth?dl=1'
+export_file_name = 'resnet152_one'
 
 #export_file_url = 'https://www.dropbox.com/s/u7rfel2ireslyn6/resnet34_json92_ORIGINAL_One.pth?dl=1'
 #export_file_name = 'resnet34_json92_ORIGINAL_One'
 
-export_file_url = 'https://www.dropbox.com/s/fjkf01oe76cspnr/squeeze_UNTRAINED_rerun_one_overfit_0415_84point5.pth?dl=1'
-export_file_name = 'squeeze_UNTRAINED_rerun_one_overfit_0415_84point5'
+#export_file_url = 'https://www.dropbox.com/s/fjkf01oe76cspnr/squeeze_UNTRAINED_rerun_one_overfit_0415_84point5.pth?dl=1'
+#export_file_name = 'squeeze_UNTRAINED_rerun_one_overfit_0415_84point5'
 
 
 #export_file_url = 'https://www.dropbox.com/s/1abrij8d4cinrts/squeeze_UNTRAINED_org_0415.pth?dl=1'
@@ -62,7 +62,7 @@ async def setup_learner():
      #data_bunch = ImageDataBunch.from_folder(path, size=296).normalize(imagenet_stats)
      #data = ImageDataBunch.from_folder(path, bs=64, size=296)
      #data.normalize(imagenet_stats)
-     learn = cnn_learner(data_bunch, models.squeezenet1_1, pretrained=False)
+     learn = cnn_learner(data_bunch, models.resnet152, pretrained=False)
      learn.load(export_file_name)
      return learn
 
