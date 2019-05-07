@@ -11,23 +11,9 @@ from fastai.vision import *
 from fastai.vision.models import cadene_models
 import pretrainedmodels
 #Cardene Squeezenet
-export_file_url = 'https://www.dropbox.com/s/y86gftj01c6ilm7/resnet152_one.pth?dl=1'
-export_file_name = 'resnet152_one'
+export_file_url = 'https://www.dropbox.com/s/ti6ti1g6hq8ar26/resnet152.pkl?dl=1'
+export_file_name = 'resnet152.pkl'
 
-#export_file_url = 'https://www.dropbox.com/s/u7rfel2ireslyn6/resnet34_json92_ORIGINAL_One.pth?dl=1'
-#export_file_name = 'resnet34_json92_ORIGINAL_One'
-
-#export_file_url = 'https://www.dropbox.com/s/fjkf01oe76cspnr/squeeze_UNTRAINED_rerun_one_overfit_0415_84point5.pth?dl=1'
-#export_file_name = 'squeeze_UNTRAINED_rerun_one_overfit_0415_84point5'
-
-
-#export_file_url = 'https://www.dropbox.com/s/1abrij8d4cinrts/squeeze_UNTRAINED_org_0415.pth?dl=1'
-#export_file_name = 'squeeze_UNTRAINED_org_0415'
-
-#classes = ['Venalfaxine 37.5mg', 'Venalfaxine ER 75mg', 'Venalfaxine ER 150mg', 'Levothyroxine 25mcg', 'Levothyroxine 50mcg', 'Levothyroxine 75mcg', 'Levothyroxine 100mcg', 'Levothyroxine 112mcg', 'Omeprazole 20mg', 'Lisinopril 5mg', 'Lisinopril 10mg', 'Lisinopril 20mg', 'Atorvastatin 10mg', 'Atorvastatin 20mg', 'Atorvastatin 40mg', 'Duloxetine 20mg', 'Duloxetine 30mg', 'Duloxetine 60mg', 'Levoxyl 25mcg', 'Levoxyl 50mcg', 'Levoxyl 88mcg', 'Levoxyl 112mcg', 'Gabapentin 100mg', 'Gabapentin #300mg', 'Sertraline 25mg', 'Sertraline 50mg', 'Sertraline 100mg', 'Gabapentin 600mg', 'Gabapentin 800mg', 'Omeprazole 40mg']
-
-#classes = ['000937384', '000937385', '000937386', '003781800', '003781803', '003781805', '003781809', '003781811', '007812790', '435470352', '435470353', '435470354', '605052578', '605052579', '605052580', '605052995', '605052996', '605052997', '607930850', '607930851', '607930853', '607930855', '658620198',
-#'658620199', '681800351', '681800352', '681800353', '684620126', '684620127', '684620397']
 classes = ['000937384', '000937385', '000937386', '003781800', '003781803', '003781805', '003781809', '003781811', '007812790',
            '435470352', '435470353', '435470354', '605052578', '605052579', '605052580', '605052995', '605052996', '605052997',
            '607930850', '607930851', '607930853', '607930855', '658620198', '658620199', '681800351', '681800352', '681800353',
@@ -39,9 +25,6 @@ classes = ['000937384', '000937385', '000937386', '003781800', '003781803', '003
            '658620185', '658620448', '658620449', '659775036', '659775037', '669930060', '681800135', '681800136', '681800137',
            '681800302', '681800303', '681800396', '681800397', '681800513', '681800517', '681800590', '681800591', '681800980',
            '681800981', '683820022']
-
-#with open('app/static/json_test.json', 'r') as f:
-#    cat_to_name = json.load(f)
 
 path = Path(__file__).parent
 
@@ -57,14 +40,17 @@ async def download_file(url, dest):
             with open(dest, 'wb') as f: f.write(data)
 
 async def setup_learner():
-     await download_file(export_file_url, path/'models'/f'{export_file_name}.pth')
-     data_bunch = ImageDataBunch.single_from_classes(path, classes, size=296).normalize(imagenet_stats)
-     #data_bunch = ImageDataBunch.from_folder(path, size=296).normalize(imagenet_stats)
-     #data = ImageDataBunch.from_folder(path, bs=64, size=296)
-     #data.normalize(imagenet_stats)
-     learn = cnn_learner(data_bunch, models.resnet152, pretrained=False)
-     learn.load(export_file_name)
-     return learn
+    await download_file(export_file_url, path/export_file_name)
+    try:
+        learn = load_learner(path, export_file_name)
+        return learn
+    except RuntimeError as e:
+        if len(e.args) > 0 and 'CPU-only machine' in e.args[0]:
+            print(e)
+            message = "\n\nThis model was trained with an old version of fastai and will not work in a CPU environment.\n\nPlease update the fastai library in your training environment and export your model again.\n\nSee instructions for 'Returning to work' at https://course.fast.ai."
+            raise RuntimeError(message)
+        else:
+            raise
 
 loop = asyncio.get_event_loop()
 tasks = [asyncio.ensure_future(setup_learner())]
