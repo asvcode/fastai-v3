@@ -119,13 +119,13 @@ async def analyze(request):
 
     #Testing
     #result = (f' {prediction} {pred_drug} ({pred_1_prob}%)')
-    result_html1 = path/'view'/'result1.html'
+    #result_html1 = path/'view'/'result1.html'
     #result_html2 = path/'static'/'result2.html'
 
-    result_html = str(result_html1.open().read() +result)
+    #result_html = str(result_html1.open().read() + result)
 
-    return JSONResponse(result_html1)
-    #return JSONResponse({'result': str(result)})
+    #return JSONResponse(result_html1)
+    return JSONResponse({'result': str(result)})
 
 if __name__ == '__main__':
     if 'serve' in sys.argv: uvicorn.run(app=app, host='0.0.0.0', port=5042)
